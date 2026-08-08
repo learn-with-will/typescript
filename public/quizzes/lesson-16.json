@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-16",
+  "lessonId": "lesson-16",
+  "title": "Utility Types",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What does `Partial<T>` produce?",
+      "options": [
+        { "id": "a", "text": "The same type with every property made optional" },
+        { "id": "b", "text": "Only the first property of T" },
+        { "id": "c", "text": "The same type with every property made readonly" },
+        { "id": "d", "text": "A union of T's property types" }
+      ],
+      "answer": "a",
+      "explanation": "Partial<T> makes every property optional — ideal for update functions where the caller supplies only the fields to change."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What's the difference between Pick/Omit and Extract/Exclude?",
+      "options": [
+        { "id": "a", "text": "They are identical" },
+        { "id": "b", "text": "Pick/Omit select or drop object properties; Extract/Exclude keep or remove members of a union" },
+        { "id": "c", "text": "Pick/Omit work on unions; Extract/Exclude work on objects" },
+        { "id": "d", "text": "All four work only on functions" }
+      ],
+      "answer": "b",
+      "explanation": "Pick/Omit operate on object properties (by key); Extract/Exclude filter members of a union type."
+    },
+    {
+      "id": "q3",
+      "type": "fill-blank",
+      "prompt": "To build an object type with one boolean per key in 'admin' | 'editor', you write ______<'admin' | 'editor', boolean>. (one word)",
+      "answer": ["Record"],
+      "explanation": "Record<Keys, Value> builds an object type with the given keys and value type, requiring an entry for each key."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "Why is it `ReturnType<typeof makeUser>` and not `ReturnType<makeUser>`?",
+      "options": [
+        { "id": "a", "text": "makeUser is a reserved word" },
+        { "id": "b", "text": "ReturnType needs the function's type; `typeof makeUser` gives that type from the function value" },
+        { "id": "c", "text": "typeof is required by all utility types" },
+        { "id": "d", "text": "They are equivalent" }
+      ],
+      "answer": "b",
+      "explanation": "makeUser is a value; ReturnType needs a type. The typeof type query converts the value to its type first."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "What does `Awaited<Promise<string>>` resolve to?",
+      "options": [
+        { "id": "a", "text": "Promise<string>" },
+        { "id": "b", "text": "string" },
+        { "id": "c", "text": "unknown" },
+        { "id": "d", "text": "void" }
+      ],
+      "answer": "b",
+      "explanation": "Awaited unwraps the value a promise resolves to (including nested promises), so Awaited<Promise<string>> is string."
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "prompt": "Which statements about utility types are correct? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "They keep derived types in sync with their source type" },
+        { "id": "b", "text": "Partial and Readonly are deep by default" },
+        { "id": "c", "text": "They are built into the standard library" },
+        { "id": "d", "text": "Deriving avoids duplicating shapes" }
+      ],
+      "answer": ["a", "c", "d"],
+      "explanation": "Utility types are built in, keep derived types in sync, and avoid duplication. Partial and Readonly apply one level only — they are not deep."
+    }
+  ]
+}

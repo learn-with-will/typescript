@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-03",
+  "lessonId": "lesson-03",
+  "title": "Basic Types",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What is the key difference between `any` and `unknown`?",
+      "options": [
+        { "id": "a", "text": "They are identical" },
+        { "id": "b", "text": "`any` disables type checking; `unknown` accepts any value but must be narrowed before use" },
+        { "id": "c", "text": "`unknown` disables type checking; `any` must be narrowed" },
+        { "id": "d", "text": "`any` can only hold objects; `unknown` can only hold primitives" }
+      ],
+      "answer": "b",
+      "explanation": "`any` opts a value out of checking. `unknown` is the safe top type: anything is assignable to it, but you must narrow it before using it."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Does TypeScript have separate types for integers and floating-point numbers?",
+      "options": [
+        { "id": "a", "text": "Yes — `int` and `float`" },
+        { "id": "b", "text": "No — `number` covers all ordinary numbers; `bigint` exists for very large integers" },
+        { "id": "c", "text": "Yes — `number` for integers and `decimal` for floats" },
+        { "id": "d", "text": "No — every number is a `bigint`" }
+      ],
+      "answer": "b",
+      "explanation": "`number` is a single type for all ordinary numbers. The separate `bigint` type is only for integers beyond the safe range."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which are valid ways to type an array of numbers? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "number[]" },
+        { "id": "b", "text": "Array<number>" },
+        { "id": "c", "text": "[number]" },
+        { "id": "d", "text": "numbers" }
+      ],
+      "answer": ["a", "b"],
+      "explanation": "number[] and Array<number> are equivalent array types. [number] is a one-element tuple, not a general array."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "When you write `let count = 5`, TypeScript ______ the type as number without an annotation. (one word)",
+      "answer": ["infers", "inferred"],
+      "explanation": "TypeScript infers a type from the initializer, so an annotation is often unnecessary."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "With strictNullChecks on, does `let name: string = null` compile?",
+      "options": [
+        { "id": "a", "text": "Yes, null is allowed for any type" },
+        { "id": "b", "text": "No — null isn't assignable to string unless the type includes it (e.g. string | null)" },
+        { "id": "c", "text": "Yes, but only in strict mode" },
+        { "id": "d", "text": "No — string can never hold null even without strict" }
+      ],
+      "answer": "b",
+      "explanation": "Under strictNullChecks, null and undefined stay out of other types; you must widen the type (string | null) to allow null."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "Why is `unknown` the better choice than `any` for the result of JSON.parse?",
+      "options": [
+        { "id": "a", "text": "It runs faster at runtime" },
+        { "id": "b", "text": "It forces you to check the value's type before using it, preventing silent bugs" },
+        { "id": "c", "text": "It automatically validates the JSON shape" },
+        { "id": "d", "text": "It converts the value to a string" }
+      ],
+      "answer": "b",
+      "explanation": "JSON.parse genuinely returns an unknown shape. Typing it as unknown makes you narrow before use, catching mistakes the compiler would miss with any."
+    }
+  ]
+}

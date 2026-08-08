@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-11",
+  "lessonId": "lesson-11",
+  "title": "Enums and const Assertions",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What runtime artifact does a numeric enum produce?",
+      "options": [
+        { "id": "a", "text": "Nothing — enums are fully erased" },
+        { "id": "b", "text": "An object mapping names to values and, via reverse mapping, values back to names" },
+        { "id": "c", "text": "A frozen array of strings" },
+        { "id": "d", "text": "A single number" }
+      ],
+      "answer": "b",
+      "explanation": "Unlike types, an enum emits a runtime object. A numeric enum also adds a reverse mapping from value back to name."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Do string enums have a reverse mapping?",
+      "options": [
+        { "id": "a", "text": "Yes" },
+        { "id": "b", "text": "No — only numeric enums map values back to names" },
+        { "id": "c", "text": "Only in strict mode" },
+        { "id": "d", "text": "Only const enums do" }
+      ],
+      "answer": "b",
+      "explanation": "String enums do not get a reverse mapping; that behavior is specific to numeric enums."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "Why can `const enum` be problematic?",
+      "options": [
+        { "id": "a", "text": "It is slower at runtime" },
+        { "id": "b", "text": "It is inlined at compile time and conflicts with isolatedModules, the single-file transpile mode many bundlers use" },
+        { "id": "c", "text": "It cannot hold string values" },
+        { "id": "d", "text": "It is not valid TypeScript" }
+      ],
+      "answer": "b",
+      "explanation": "const enum values are inlined and require seeing the definition, which breaks under isolatedModules used by esbuild/SWC/Babel."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "What does `['a', 'b'] as const` infer as its type?",
+      "options": [
+        { "id": "a", "text": "string[]" },
+        { "id": "b", "text": "readonly ['a', 'b']" },
+        { "id": "c", "text": "('a' | 'b')[]" },
+        { "id": "d", "text": "any[]" }
+      ],
+      "answer": "b",
+      "explanation": "as const infers the narrowest, deeply read-only type, keeping the literal element types: readonly ['a', 'b']."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "To derive a union from an as-const object of roles, you write type Role = (typeof Roles)[______ typeof Roles]. (one word)",
+      "answer": ["keyof"],
+      "explanation": "(typeof Roles)[keyof typeof Roles] indexes the object's type by all its keys, producing the union of its values."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "When is a plain literal union the best choice over an enum?",
+      "options": [
+        { "id": "a", "text": "When you need reverse mapping" },
+        { "id": "b", "text": "When you only need the type and no runtime constants — it emits no code and is fully checked" },
+        { "id": "c", "text": "When you need runtime metadata" },
+        { "id": "d", "text": "Never — enums are always better" }
+      ],
+      "answer": "b",
+      "explanation": "A literal union is the leanest option when you need only the type: zero runtime code with full type checking."
+    }
+  ]
+}

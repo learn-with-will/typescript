@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-12",
+  "lessonId": "lesson-12",
+  "title": "Advanced Function Types",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "In an overloaded function, which signatures can callers use?",
+      "options": [
+        { "id": "a", "text": "The implementation signature" },
+        { "id": "b", "text": "Only the overload signatures; the implementation signature isn't callable from outside" },
+        { "id": "c", "text": "All signatures equally" },
+        { "id": "d", "text": "None — overloads are documentation only" }
+      ],
+      "answer": "b",
+      "explanation": "Callers see only the overload signatures. The implementation signature exists to satisfy them and isn't part of the public callable type."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What does a `this` parameter do, and does it affect the arguments?",
+      "options": [
+        { "id": "a", "text": "It adds a required first argument callers must pass" },
+        { "id": "b", "text": "It types the value of `this` inside the function; it's type-only, erased, and doesn't change the real parameters" },
+        { "id": "c", "text": "It makes the function static" },
+        { "id": "d", "text": "It binds this permanently at runtime" }
+      ],
+      "answer": "b",
+      "explanation": "A this parameter is a type-only first parameter. It types this and is erased; callers don't pass it and the real arguments are unchanged."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "How is an assertion function different from a type guard?",
+      "options": [
+        { "id": "a", "text": "There is no difference" },
+        { "id": "b", "text": "A type guard returns a boolean you branch on; an assertion function throws on failure and narrows the value for the rest of the scope" },
+        { "id": "c", "text": "An assertion function returns a boolean; a type guard throws" },
+        { "id": "d", "text": "Assertion functions only work on numbers" }
+      ],
+      "answer": "b",
+      "explanation": "A type guard returns a boolean predicate. An assertion function throws if the condition fails and, via an asserts return type, narrows without an if."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "Write the return annotation that narrows `value` to string if the function doesn't throw: asserts value ______ string. (one word)",
+      "answer": ["is"],
+      "explanation": "`asserts value is string` narrows value to string for the rest of the scope when the assertion function returns."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "When should you prefer a single signature over overloads?",
+      "options": [
+        { "id": "a", "text": "Never — overloads are always better" },
+        { "id": "b", "text": "When a union return type is just as accurate — overloads add complexity and can hide mistakes" },
+        { "id": "c", "text": "Only when there is one parameter" },
+        { "id": "d", "text": "Only in non-strict mode" }
+      ],
+      "answer": "b",
+      "explanation": "Overloads are worthwhile only when the return type genuinely depends on the argument shape; otherwise a single signature is clearer and safer."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "What happens if an assertion function's runtime check doesn't match its `asserts` type?",
+      "options": [
+        { "id": "a", "text": "The compiler catches it automatically" },
+        { "id": "b", "text": "The compiler still trusts the assertion, producing an unsafe narrowing that can crash at runtime" },
+        { "id": "c", "text": "It becomes a syntax error" },
+        { "id": "d", "text": "Nothing — assertions have no effect" }
+      ],
+      "answer": "b",
+      "explanation": "As with type guards, the compiler trusts the assertion. A dishonest runtime check yields an unsafe narrowing and possible runtime errors."
+    }
+  ]
+}

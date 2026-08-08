@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-09",
+  "lessonId": "lesson-09",
+  "title": "Generics",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What problem do generics solve that `any` does not?",
+      "options": [
+        { "id": "a", "text": "They make code run faster" },
+        { "id": "b", "text": "They preserve the relationship between types (e.g. input to output), keeping full type safety" },
+        { "id": "c", "text": "They disable type checking" },
+        { "id": "d", "text": "They only work with numbers" }
+      ],
+      "answer": "b",
+      "explanation": "A type parameter captures the caller's type and reuses it, so information (like input relating to output) is preserved — unlike any, which discards it."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Do you usually pass type arguments explicitly, like `identity<string>('hi')`?",
+      "options": [
+        { "id": "a", "text": "Yes, always" },
+        { "id": "b", "text": "No — TypeScript infers the type argument from the value; you specify it only when inference can't" },
+        { "id": "c", "text": "Only for numbers" },
+        { "id": "d", "text": "Type arguments are never allowed explicitly" }
+      ],
+      "answer": "b",
+      "explanation": "Type arguments are usually inferred from the values you pass; you supply them explicitly only when inference cannot determine them."
+    },
+    {
+      "id": "q3",
+      "type": "fill-blank",
+      "prompt": "To limit a type parameter so you can use a property inside a generic, you add a constraint with the ______ keyword. (one word)",
+      "answer": ["extends"],
+      "explanation": "A constraint like <T extends { length: number }> guarantees T has the needed members, so you can safely use them."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "How do you make `getProperty(obj, key)` reject keys that don't exist on obj?",
+      "options": [
+        { "id": "a", "text": "Type key as string" },
+        { "id": "b", "text": "Constrain the key: <T, K extends keyof T>(obj: T, key: K): T[K]" },
+        { "id": "c", "text": "Type key as any" },
+        { "id": "d", "text": "Use an index signature" }
+      ],
+      "answer": "b",
+      "explanation": "K extends keyof T limits key to real keys of T, and T[K] returns the exact value type — so invalid keys are compile errors."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "When is adding a type parameter NOT worth it?",
+      "options": [
+        { "id": "a", "text": "When it connects an input to an output" },
+        { "id": "b", "text": "When it appears only once and carries no relationship — a concrete type is clearer" },
+        { "id": "c", "text": "When it has a constraint" },
+        { "id": "d", "text": "Type parameters are always worth adding" }
+      ],
+      "answer": "b",
+      "explanation": "A type parameter earns its place by connecting positions (input to output, key to value). Used once with no relationship, it just adds noise."
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "prompt": "Which can be generic in TypeScript? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Functions" },
+        { "id": "b", "text": "Interfaces" },
+        { "id": "c", "text": "Classes" },
+        { "id": "d", "text": "Boolean literals" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Functions, interfaces, and classes can all take type parameters. A boolean literal is a value/type, not something parameterized."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-14",
+  "lessonId": "lesson-14",
+  "title": "Modules and Declaration Files",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What makes a file a \"module\" in TypeScript?",
+      "options": [
+        { "id": "a", "text": "Having more than 100 lines" },
+        { "id": "b", "text": "Using top-level import/export; its top-level names are private unless exported" },
+        { "id": "c", "text": "Ending in .module.ts" },
+        { "id": "d", "text": "Containing a class" }
+      ],
+      "answer": "b",
+      "explanation": "A file with top-level import/export is a module. Its top-level declarations are scoped to the file unless exported."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "When should you use `import type`?",
+      "options": [
+        { "id": "a", "text": "For every import" },
+        { "id": "b", "text": "When an imported name is used only as a type — it's always erased and avoids accidental runtime imports" },
+        { "id": "c", "text": "Only for default imports" },
+        { "id": "d", "text": "Never — it's deprecated" }
+      ],
+      "answer": "b",
+      "explanation": "import type marks a type-only import, guaranteeing it's erased and preventing a needless (or invalid) runtime import under strict module settings."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "What is a `.d.ts` declaration file?",
+      "options": [
+        { "id": "a", "text": "A compiled JavaScript file" },
+        { "id": "b", "text": "A types-only file describing the shape of code implemented elsewhere" },
+        { "id": "c", "text": "A configuration file" },
+        { "id": "d", "text": "A test file" }
+      ],
+      "answer": "b",
+      "explanation": "A declaration file contains types only (no implementations). The standard library itself is a set of .d.ts files."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "Types for a library that ships none usually come from a community package under the ______ scope on DefinitelyTyped. (include the @ symbol)",
+      "answer": ["@types", "@types/"],
+      "explanation": "The @types scope hosts community-maintained type packages that the compiler picks up automatically."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "What does an ambient `declare module 'x' { ... }` do?",
+      "options": [
+        { "id": "a", "text": "Deletes the module" },
+        { "id": "b", "text": "Provides types for a module (often plain JavaScript) that has no type declarations of its own" },
+        { "id": "c", "text": "Runs the module immediately" },
+        { "id": "d", "text": "Renames the module" }
+      ],
+      "answer": "b",
+      "explanation": "An ambient declare module supplies types for an untyped module, so imports from it are type-checked."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "Which `moduleResolution` value is typical for a Vite/webpack app, and which for Node?",
+      "options": [
+        { "id": "a", "text": "classic for apps; amd for Node" },
+        { "id": "b", "text": "bundler for the app; nodenext for Node.js" },
+        { "id": "c", "text": "node for apps; bundler for Node" },
+        { "id": "d", "text": "They both use classic" }
+      ],
+      "answer": "b",
+      "explanation": "Apps built with bundlers use moduleResolution 'bundler'; Node programs use 'node16'/'nodenext' to match Node's resolution rules."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-13",
+  "lessonId": "lesson-13",
+  "title": "unknown, never, and Type Assertions",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What is `never`, and where is it most useful?",
+      "options": [
+        { "id": "a", "text": "The type of any value; useful for logging" },
+        { "id": "b", "text": "The bottom type with no values; most useful for exhaustiveness checks that force handling every union member" },
+        { "id": "c", "text": "A synonym for undefined" },
+        { "id": "d", "text": "The type of empty arrays" }
+      ],
+      "answer": "b",
+      "explanation": "never has no values. Assigning a switch's default case to a never variable makes the compiler error if a new union member isn't handled."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Does a type assertion (`as`) perform a runtime check or conversion?",
+      "options": [
+        { "id": "a", "text": "Yes, it validates the value at runtime" },
+        { "id": "b", "text": "No — it's a compile-time-only override; if you're wrong, the bug surfaces at runtime" },
+        { "id": "c", "text": "It converts the value to the target type" },
+        { "id": "d", "text": "It throws if the types don't match" }
+      ],
+      "answer": "b",
+      "explanation": "An assertion only tells the compiler to treat a value as a type. It emits no runtime check or conversion, so an incorrect assertion causes runtime bugs."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "What does `satisfies` do that a type annotation does not?",
+      "options": [
+        { "id": "a", "text": "It converts the value at runtime" },
+        { "id": "b", "text": "It validates a value against a type without widening the value's inferred type, preserving precise literal/member types" },
+        { "id": "c", "text": "It disables type checking for the value" },
+        { "id": "d", "text": "It makes the value readonly" }
+      ],
+      "answer": "b",
+      "explanation": "satisfies checks that a value conforms to a type while keeping its specific inferred types — unlike an annotation, which widens the value to the target type."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "When should you avoid the non-null assertion `!`?",
+      "options": [
+        { "id": "a", "text": "Never — it's always safe" },
+        { "id": "b", "text": "Whenever a real check or default is possible — a wrong `!` crashes at runtime" },
+        { "id": "c", "text": "Only inside classes" },
+        { "id": "d", "text": "Only when the value is a number" }
+      ],
+      "answer": "b",
+      "explanation": "The ! operator claims a value isn't null/undefined with no runtime check. Prefer a real check or default; a wrong assertion crashes at runtime."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "To force a cast between unrelated types you must route through `as unknown as Type`, which bypasses TypeScript's ______ rule. (one word)",
+      "answer": ["overlap"],
+      "explanation": "TypeScript allows assertions only between sufficiently overlapping types; going through unknown bypasses that overlap rule — a red flag."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "Why prefer `unknown` over `any` for a `catch` clause or parsed JSON?",
+      "options": [
+        { "id": "a", "text": "It is faster" },
+        { "id": "b", "text": "It forces you to narrow before using the value, preventing silent runtime errors" },
+        { "id": "c", "text": "It validates the value automatically" },
+        { "id": "d", "text": "any is not allowed in catch" }
+      ],
+      "answer": "b",
+      "explanation": "unknown requires narrowing before use, so you must check the value's actual shape — catching mistakes that any would let slip through silently."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-18",
+  "lessonId": "lesson-18",
+  "title": "Conditional Types",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "How do you read `T extends U ? X : Y`?",
+      "options": [
+        { "id": "a", "text": "T always becomes X" },
+        { "id": "b", "text": "If T is assignable to U, the type is X; otherwise it's Y — a type-level ternary" },
+        { "id": "c", "text": "T inherits from U" },
+        { "id": "d", "text": "U extends T, giving X" }
+      ],
+      "answer": "b",
+      "explanation": "A conditional type is a type-level ternary: if T is assignable to U the result is X, otherwise Y."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What does it mean that conditional types distribute over unions?",
+      "options": [
+        { "id": "a", "text": "They ignore unions" },
+        { "id": "b", "text": "A naked `T extends ...` is applied to each union member separately, and the results are unioned together" },
+        { "id": "c", "text": "They convert unions to intersections" },
+        { "id": "d", "text": "They only work on the first member" }
+      ],
+      "answer": "b",
+      "explanation": "When the checked type is a naked type parameter, the conditional applies to each member of a union and unions the results."
+    },
+    {
+      "id": "q3",
+      "type": "fill-blank",
+      "prompt": "Inside an `extends` clause, the ______ keyword captures part of the matched type, e.g. T extends (infer U)[] ? U : T. (one word)",
+      "answer": ["infer"],
+      "explanation": "infer declares a type variable inside the extends clause to capture part of the matched type for use in the true branch."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "How do you extract a function's return type with a conditional?",
+      "options": [
+        { "id": "a", "text": "F extends (...args: any[]) => infer R ? R : never" },
+        { "id": "b", "text": "F extends R ? R : never" },
+        { "id": "c", "text": "keyof F" },
+        { "id": "d", "text": "F['return']" }
+      ],
+      "answer": "a",
+      "explanation": "Matching the function shape and inferring R after => extracts the return type — essentially how the built-in ReturnType works."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "How do you stop a conditional type from distributing over a union?",
+      "options": [
+        { "id": "a", "text": "Use readonly" },
+        { "id": "b", "text": "Wrap both sides in a one-element tuple: [T] extends [U] ? ... : ..." },
+        { "id": "c", "text": "Use keyof" },
+        { "id": "d", "text": "You cannot stop distribution" }
+      ],
+      "answer": "b",
+      "explanation": "Wrapping in [T]/[U] prevents distribution, testing the whole type at once — the standard trick for detecting never, for instance."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "In a distributive conditional, what happens to members that resolve to `never`?",
+      "options": [
+        { "id": "a", "text": "They become undefined" },
+        { "id": "b", "text": "They drop out of the resulting union — which is how filtering (e.g. Exclude) works" },
+        { "id": "c", "text": "They cause a compile error" },
+        { "id": "d", "text": "They become any" }
+      ],
+      "answer": "b",
+      "explanation": "never members disappear from a union, so a conditional that maps unwanted members to never effectively filters them out."
+    }
+  ]
+}

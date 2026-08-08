@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-22",
+  "lessonId": "lesson-22",
+  "title": "Declaration Merging and Module Augmentation",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What happens if you declare two interfaces with the same name?",
+      "options": [
+        { "id": "a", "text": "A duplicate-identifier error" },
+        { "id": "b", "text": "TypeScript merges them into a single interface containing all their members" },
+        { "id": "c", "text": "The second one replaces the first" },
+        { "id": "d", "text": "Only the first is used" }
+      ],
+      "answer": "b",
+      "explanation": "Interface declaration merging combines same-named interfaces into one type with all members — the basis of module augmentation."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Can `type` aliases be merged like interfaces?",
+      "options": [
+        { "id": "a", "text": "Yes, identically" },
+        { "id": "b", "text": "No — a duplicate `type` name is an error; only interfaces (and namespaces) merge" },
+        { "id": "c", "text": "Only string aliases merge" },
+        { "id": "d", "text": "Only in strict mode" }
+      ],
+      "answer": "b",
+      "explanation": "Type aliases don't merge; declaring the same alias twice is an error. Merging works on interfaces and namespaces."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "How do you add a typed property to a third-party module's interface?",
+      "options": [
+        { "id": "a", "text": "Edit the library's source" },
+        { "id": "b", "text": "Module augmentation: declare module 'lib' { interface X { ... } } in a file that's a module" },
+        { "id": "c", "text": "Cast to any everywhere" },
+        { "id": "d", "text": "It's impossible" }
+      ],
+      "answer": "b",
+      "explanation": "Module augmentation reopens a library's interface via declare module and merges your members into it — no source edits or casts."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "How do you add a typed property to `window`?",
+      "options": [
+        { "id": "a", "text": "(window as any).x = ..." },
+        { "id": "b", "text": "Inside a module, declare global { interface Window { ... } }" },
+        { "id": "c", "text": "Edit lib.dom.d.ts" },
+        { "id": "d", "text": "You can't type globals" }
+      ],
+      "answer": "b",
+      "explanation": "declare global inside a module merges new members into the global Window interface — the typed alternative to casting."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "An augmentation file that isn't already a module needs a top-level `______ {}` to make it one. (one keyword)",
+      "answer": ["export"],
+      "explanation": "Adding `export {}` turns a file into a module, which is required for declare global and scoped module augmentation."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "Where do namespaces still make sense?",
+      "options": [
+        { "id": "a", "text": "For organizing all application code instead of modules" },
+        { "id": "b", "text": "For merging extra members onto a function/class/enum value, and in ambient .d.ts files describing global libraries" },
+        { "id": "c", "text": "They are fully removed from TypeScript" },
+        { "id": "d", "text": "Only for React components" }
+      ],
+      "answer": "b",
+      "explanation": "ES modules replaced namespaces for app code. Namespaces remain useful for value merging and ambient global (script-loaded) library typings."
+    }
+  ]
+}

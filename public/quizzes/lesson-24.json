@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-24",
+  "lessonId": "lesson-24",
+  "title": "Typing Async Code and Migrating JavaScript",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What type does an `async` function that returns a `number` have?",
+      "options": [
+        { "id": "a", "text": "number" },
+        { "id": "b", "text": "Promise<number> — async functions always return a promise" },
+        { "id": "c", "text": "Awaited<number>" },
+        { "id": "d", "text": "void" }
+      ],
+      "answer": "b",
+      "explanation": "An async function wraps its return in a promise, so returning a number gives the type Promise<number>."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What type does `response.json()` resolve to, and how should you handle it?",
+      "options": [
+        { "id": "a", "text": "The exact shape you expect; use it directly" },
+        { "id": "b", "text": "any — treat the result as unknown and validate it with a type guard before using it" },
+        { "id": "c", "text": "string — parse it yourself" },
+        { "id": "d", "text": "never" }
+      ],
+      "answer": "b",
+      "explanation": "json() resolves to any, which disables checking. Treat network data as unknown and validate its shape at runtime before trusting it."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "Under `strict`, what is the type of the value in a `catch` clause?",
+      "options": [
+        { "id": "a", "text": "Error" },
+        { "id": "b", "text": "unknown — because JavaScript can throw any value; narrow it before use" },
+        { "id": "c", "text": "any" },
+        { "id": "d", "text": "string" }
+      ],
+      "answer": "b",
+      "explanation": "With useUnknownInCatchVariables (part of strict), the caught value is unknown, since anything can be thrown. Narrow with instanceof Error first."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "Which options help you include and type-check JavaScript during migration? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "allowJs" },
+        { "id": "b", "text": "checkJs (or // @ts-check per file)" },
+        { "id": "c", "text": "JSDoc type annotations" },
+        { "id": "d", "text": "noEmit" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "allowJs includes .js files, checkJs / @ts-check type-checks them, and JSDoc adds types before renaming. noEmit is unrelated to migration."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "You can add a comment ______ at the top of a .js file to type-check it without renaming. (the exact comment, e.g. // @xxx)",
+      "answer": ["// @ts-check", "@ts-check", "ts-check"],
+      "explanation": "// @ts-check enables type checking for a single JavaScript file using inference and JSDoc — a low-friction migration step."
+    },
+    {
+      "id": "q6",
+      "type": "ordering",
+      "prompt": "Order these steps for gradually migrating a JavaScript codebase to TypeScript.",
+      "items": [
+        { "id": "allowjs", "text": "Add TypeScript and set allowJs so .js and .ts coexist" },
+        { "id": "checkjs", "text": "Turn on checkJs / // @ts-check and add JSDoc types" },
+        { "id": "rename", "text": "Rename files from .js to .ts one at a time" },
+        { "id": "strict", "text": "Tighten the config by enabling strict options incrementally" }
+      ],
+      "answer": ["allowjs", "checkjs", "rename", "strict"],
+      "explanation": "Introduce TypeScript with allowJs, check JavaScript in place, rename file by file, then tighten strictness — all while the code keeps running."
+    }
+  ]
+}

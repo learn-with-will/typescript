@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-07",
+  "lessonId": "lesson-07",
+  "title": "Type Aliases, Arrays, and Tuples",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What can a `type` alias name that an `interface` cannot?",
+      "options": [
+        { "id": "a", "text": "Object shapes" },
+        { "id": "b", "text": "Any non-object type — unions, tuples, primitives, and function types" },
+        { "id": "c", "text": "Only classes" },
+        { "id": "d", "text": "Nothing — they are identical" }
+      ],
+      "answer": "b",
+      "explanation": "Type aliases can name any type, including unions, tuples, and function types. Interfaces describe object-like shapes only."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Which of `type` and `interface` supports declaration merging?",
+      "options": [
+        { "id": "a", "text": "interface" },
+        { "id": "b", "text": "type" },
+        { "id": "c", "text": "Both" },
+        { "id": "d", "text": "Neither" }
+      ],
+      "answer": "a",
+      "explanation": "Declaring the same interface twice merges the declarations. A duplicate type alias name is an error — aliases don't merge."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "How is a tuple like `[number, number]` different from an array `number[]`?",
+      "options": [
+        { "id": "a", "text": "There is no difference" },
+        { "id": "b", "text": "A tuple has a fixed length and a specific type at each position; number[] fixes neither" },
+        { "id": "c", "text": "A tuple can only hold strings" },
+        { "id": "d", "text": "number[] has a fixed length; a tuple does not" }
+      ],
+      "answer": "b",
+      "explanation": "A tuple fixes both the length and the type at each position. number[] is any-length with a single element type."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "To make an array that cannot be mutated, type it as ______ number[]. (one word)",
+      "answer": ["readonly"],
+      "explanation": "readonly number[] (or ReadonlyArray<number>) forbids mutation like push or index assignment."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "How do you compose types with a `type` alias, since it has no `extends`?",
+      "options": [
+        { "id": "a", "text": "With a union: A | B" },
+        { "id": "b", "text": "With an intersection: A & B" },
+        { "id": "c", "text": "With the merge keyword" },
+        { "id": "d", "text": "You cannot compose type aliases" }
+      ],
+      "answer": "b",
+      "explanation": "An intersection (A & B) combines all members of both types — the alias equivalent of interface extends."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "What do named tuple members like `[start: number, end: number]` change about the type?",
+      "options": [
+        { "id": "a", "text": "They enforce the labels at runtime" },
+        { "id": "b", "text": "Nothing about the type — the labels are documentation for readability only" },
+        { "id": "c", "text": "They make the tuple readonly" },
+        { "id": "d", "text": "They allow extra elements" }
+      ],
+      "answer": "b",
+      "explanation": "Named tuple members are purely for readability; they don't change the type or add runtime behavior."
+    }
+  ]
+}

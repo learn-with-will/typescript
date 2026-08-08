@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-06",
+  "lessonId": "lesson-06",
+  "title": "Union and Literal Types",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What can you do with a value of type `string | number` before narrowing it?",
+      "options": [
+        { "id": "a", "text": "Any string or number operation" },
+        { "id": "b", "text": "Only operations valid for both string and number" },
+        { "id": "c", "text": "Nothing at all" },
+        { "id": "d", "text": "Only number operations" }
+      ],
+      "answer": "b",
+      "explanation": "Until you narrow, only operations valid for every member of the union are allowed; member-specific methods require narrowing first."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Why does `let x = 'active'` have type `string` while `const x = 'active'` has type `'active'`?",
+      "options": [
+        { "id": "a", "text": "let is faster than const" },
+        { "id": "b", "text": "let can be reassigned, so the literal widens to string; const can't change, so the literal type is kept" },
+        { "id": "c", "text": "const always widens; let keeps literals" },
+        { "id": "d", "text": "There is no difference" }
+      ],
+      "answer": "b",
+      "explanation": "A reassignable let widens the literal to its general type; a const keeps the narrow literal type because it can never change."
+    },
+    {
+      "id": "q3",
+      "type": "fill-blank",
+      "prompt": "A type made of exact allowed values like 'sm' | 'md' | 'lg' is called a union of ______ types. (one word)",
+      "answer": ["literal"],
+      "explanation": "A union of literal types restricts a value to a fixed set of exact options, like a drop-down menu."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "Which operator is the first tool for narrowing a union of primitives?",
+      "options": [
+        { "id": "a", "text": "instanceof" },
+        { "id": "b", "text": "typeof" },
+        { "id": "c", "text": "keyof" },
+        { "id": "d", "text": "in" }
+      ],
+      "answer": "b",
+      "explanation": "typeof narrows primitive unions (e.g. typeof id === 'string' narrows id to string inside that branch)."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "Why prefer a literal union over a plain `string` for a size setting?",
+      "options": [
+        { "id": "a", "text": "It runs faster" },
+        { "id": "b", "text": "It restricts the value to the exact allowed options, making invalid values compile errors" },
+        { "id": "c", "text": "It uses less memory at runtime" },
+        { "id": "d", "text": "Plain string is not allowed as a parameter type" }
+      ],
+      "answer": "b",
+      "explanation": "A literal union turns a free-text string into a fixed set of choices, so an invalid value is caught at compile time."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "How can you force the compiler to require handling of every member of a literal union?",
+      "options": [
+        { "id": "a", "text": "Use it as the key type of a Record, e.g. Record<Status, string>" },
+        { "id": "b", "text": "Mark the union readonly" },
+        { "id": "c", "text": "Wrap it in an interface" },
+        { "id": "d", "text": "There is no way to enforce this" }
+      ],
+      "answer": "a",
+      "explanation": "Record<Status, string> requires an entry for every member of Status, so omitting one is a compile error."
+    }
+  ]
+}

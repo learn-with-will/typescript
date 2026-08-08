@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-15",
+  "lessonId": "lesson-15",
+  "title": "The tsconfig Options That Matter",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What is the single most impactful check that `strict` turns on?",
+      "options": [
+        { "id": "a", "text": "skipLibCheck" },
+        { "id": "b", "text": "strictNullChecks — it keeps null/undefined out of other types" },
+        { "id": "c", "text": "noEmit" },
+        { "id": "d", "text": "esModuleInterop" }
+      ],
+      "answer": "b",
+      "explanation": "strictNullChecks prevents null/undefined from silently entering other types, eliminating a huge class of 'cannot read property of undefined' bugs."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What does `noEmit` do, and when is it used?",
+      "options": [
+        { "id": "a", "text": "It disables type checking" },
+        { "id": "b", "text": "It type-checks without producing JavaScript — used in bundler-based apps where the bundler emits code and tsc only checks" },
+        { "id": "c", "text": "It emits only declaration files" },
+        { "id": "d", "text": "It minifies the output" }
+      ],
+      "answer": "b",
+      "explanation": "noEmit runs the full type check but writes no .js, so tsc acts purely as a checker alongside a bundler."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "What does `isolatedModules` guarantee, and who needs it?",
+      "options": [
+        { "id": "a", "text": "That files never import each other" },
+        { "id": "b", "text": "That every file can be transpiled on its own; bundlers like esbuild/SWC that compile file-by-file require it" },
+        { "id": "c", "text": "That the output is a single file" },
+        { "id": "d", "text": "That modules are lazy-loaded" }
+      ],
+      "answer": "b",
+      "explanation": "isolatedModules ensures each file is transpilable in isolation, which single-file transpilers (esbuild, SWC, Babel) rely on."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "Is `noUncheckedIndexedAccess` part of `strict`?",
+      "options": [
+        { "id": "a", "text": "Yes" },
+        { "id": "b", "text": "No — it's a separate, recommended option that makes arr[i]/obj[key] include undefined" },
+        { "id": "c", "text": "It's an alias for strictNullChecks" },
+        { "id": "d", "text": "It's deprecated" }
+      ],
+      "answer": "b",
+      "explanation": "noUncheckedIndexedAccess is opt-in (not in strict). It adds undefined to indexed access results, forcing you to handle out-of-range/missing keys."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "The compiler option that emits nothing but still type-checks is ______. (the option name)",
+      "answer": ["noEmit"],
+      "explanation": "noEmit type-checks without writing output — the standard way bundler-based apps run tsc in CI."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "What are project references for?",
+      "options": [
+        { "id": "a", "text": "Linking to external URLs" },
+        { "id": "b", "text": "Building multiple interdependent tsconfig projects in the right order and rebuilding only what changed" },
+        { "id": "c", "text": "Referencing type packages" },
+        { "id": "d", "text": "Importing JSON files" }
+      ],
+      "answer": "b",
+      "explanation": "Project references (composite + references) organize large multi-project builds, compiling dependencies in order and incrementally."
+    }
+  ]
+}
