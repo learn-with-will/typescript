@@ -1,0 +1,293 @@
+[
+  {
+    "id": "lesson-01",
+    "slug": "what-is-typescript",
+    "title": "What Is TypeScript?",
+    "lessons": [
+      "what-typescript-adds",
+      "structural-typing",
+      "type-erasure",
+      "annotations-do-not-validate-data",
+      "typescript-7-native-compiler",
+      "errors-before-runtime"
+    ]
+  },
+  {
+    "id": "lesson-02",
+    "slug": "setting-up-typescript",
+    "title": "Setting Up TypeScript",
+    "lessons": [
+      "typescript-playground",
+      "install-typescript",
+      "compile-with-tsc",
+      "tsconfig-json",
+      "strict-mode",
+      "tsc-checks-and-emits"
+    ]
+  },
+  {
+    "id": "lesson-03",
+    "slug": "basic-types",
+    "title": "Basic Types",
+    "lessons": [
+      "primitives-and-inference",
+      "array-type-syntax",
+      "any-the-escape-hatch",
+      "unknown-safe-top-type",
+      "strict-null-checks",
+      "type-annotations-vs-inference"
+    ]
+  },
+  {
+    "id": "lesson-04",
+    "slug": "functions-and-inference",
+    "title": "Functions and Inference",
+    "lessons": [
+      "typing-parameters-and-returns",
+      "optional-and-default-parameters",
+      "rest-parameters",
+      "void-return-type",
+      "function-type-expressions",
+      "contextual-typing"
+    ]
+  },
+  {
+    "id": "lesson-05",
+    "slug": "objects-and-interfaces",
+    "title": "Objects and Interfaces",
+    "lessons": [
+      "object-type-annotations",
+      "interfaces-for-object-shapes",
+      "optional-and-readonly-properties",
+      "index-signatures-for-lookups",
+      "excess-property-checks",
+      "extending-interfaces"
+    ]
+  },
+  {
+    "id": "lesson-06",
+    "slug": "union-and-literal-types",
+    "title": "Union and Literal Types",
+    "lessons": [
+      "union-types",
+      "literal-types",
+      "literal-widening",
+      "typeof-narrowing",
+      "const-assertions-for-literals"
+    ]
+  },
+  {
+    "id": "lesson-07",
+    "slug": "type-aliases-arrays-and-tuples",
+    "title": "Type Aliases, Arrays, and Tuples",
+    "lessons": [
+      "type-aliases-basics",
+      "type-aliases-vs-interfaces",
+      "tuple-types",
+      "named-tuple-members",
+      "readonly-tuples-and-arrays"
+    ]
+  },
+  {
+    "id": "lesson-08",
+    "slug": "narrowing-and-type-guards",
+    "title": "Narrowing and Type Guards",
+    "lessons": [
+      "truthiness-and-equality-narrowing",
+      "instanceof-and-in-narrowing",
+      "discriminated-unions",
+      "user-defined-type-guards",
+      "asserts-type-predicates"
+    ]
+  },
+  {
+    "id": "lesson-09",
+    "slug": "generics",
+    "title": "Generics",
+    "lessons": [
+      "generic-functions",
+      "generic-interfaces-and-classes",
+      "generic-constraints",
+      "constraint-with-keyof",
+      "type-argument-inference",
+      "default-type-parameters"
+    ]
+  },
+  {
+    "id": "lesson-10",
+    "slug": "classes",
+    "title": "Classes",
+    "lessons": [
+      "class-member-visibility",
+      "parameter-properties",
+      "class-inheritance-and-implements",
+      "abstract-classes",
+      "readonly-and-getters-setters"
+    ]
+  },
+  {
+    "id": "lesson-11",
+    "slug": "enums-and-const-assertions",
+    "title": "Enums and const Assertions",
+    "lessons": [
+      "numeric-enums-and-reverse-mapping",
+      "string-enums",
+      "const-enums-and-isolated-modules",
+      "enums-versus-union-of-literals"
+    ]
+  },
+  {
+    "id": "lesson-12",
+    "slug": "advanced-function-types",
+    "title": "Advanced Function Types",
+    "lessons": [
+      "function-overloads",
+      "declaring-this-in-functions",
+      "construct-signatures",
+      "call-signatures-with-properties"
+    ]
+  },
+  {
+    "id": "lesson-13",
+    "slug": "unknown-never-and-assertions",
+    "title": "unknown, never, and Type Assertions",
+    "lessons": [
+      "the-never-type",
+      "exhaustive-checks-with-never",
+      "type-assertions-with-as",
+      "non-null-assertion-operator",
+      "const-assertions-as-const"
+    ]
+  },
+  {
+    "id": "lesson-14",
+    "slug": "modules-and-declaration-files",
+    "title": "Modules and Declaration Files",
+    "lessons": [
+      "es-modules-import-export",
+      "type-only-imports",
+      "declaration-files",
+      "ambient-declarations",
+      "types-packages",
+      "module-resolution"
+    ]
+  },
+  {
+    "id": "lesson-15",
+    "slug": "tsconfig-options-that-matter",
+    "title": "The tsconfig Options That Matter",
+    "lessons": [
+      "compiler-target-and-lib",
+      "strict-flag-breakdown",
+      "no-unchecked-indexed-access",
+      "verbatim-module-syntax",
+      "skip-lib-check"
+    ]
+  },
+  {
+    "id": "lesson-16",
+    "slug": "utility-types",
+    "title": "Utility Types",
+    "lessons": [
+      "partial-and-required",
+      "readonly-and-record",
+      "pick-and-omit",
+      "exclude-and-extract",
+      "returntype-and-parameters",
+      "nonnullable-and-awaited"
+    ]
+  },
+  {
+    "id": "lesson-17",
+    "slug": "keyof-typeof-and-indexed-access-types",
+    "title": "keyof, typeof, and Indexed Access Types",
+    "lessons": [
+      "keyof-type-operator",
+      "typeof-type-query",
+      "indexed-access-types",
+      "combining-keyof-and-indexed-access"
+    ]
+  },
+  {
+    "id": "lesson-18",
+    "slug": "conditional-types",
+    "title": "Conditional Types",
+    "lessons": [
+      "conditional-type-basics",
+      "distributive-conditionals",
+      "infer-keyword",
+      "infer-return-and-promise",
+      "stop-distribution-with-tuples",
+      "conditional-type-pitfalls"
+    ]
+  },
+  {
+    "id": "lesson-19",
+    "slug": "mapped-types",
+    "title": "Mapped Types",
+    "lessons": [
+      "mapped-type-syntax",
+      "mapping-modifiers-and-readonly",
+      "key-remapping-with-as",
+      "filtering-keys-with-never",
+      "building-utility-types-with-mapping"
+    ]
+  },
+  {
+    "id": "lesson-20",
+    "slug": "template-literal-types",
+    "title": "Template Literal Types",
+    "lessons": [
+      "template-literal-type-basics",
+      "template-literals-with-unions",
+      "intrinsic-string-manipulation",
+      "key-remapping-with-templates",
+      "extracting-parts-with-infer"
+    ]
+  },
+  {
+    "id": "lesson-21",
+    "slug": "generics-in-depth",
+    "title": "Generics in Depth",
+    "lessons": [
+      "variance-in-generics",
+      "inference-from-multiple-positions",
+      "const-type-parameters",
+      "when-to-use-generics"
+    ]
+  },
+  {
+    "id": "lesson-22",
+    "slug": "declaration-merging-and-module-augmentation",
+    "title": "Declaration Merging and Module Augmentation",
+    "lessons": [
+      "interface-declaration-merging",
+      "module-augmentation",
+      "declare-global-augmentation",
+      "augmentation-pitfalls"
+    ]
+  },
+  {
+    "id": "lesson-23",
+    "slug": "decorators",
+    "title": "Decorators",
+    "lessons": [
+      "standard-decorators-overview",
+      "class-and-method-decorators",
+      "field-and-accessor-decorators",
+      "standard-versus-legacy-decorators"
+    ]
+  },
+  {
+    "id": "lesson-24",
+    "slug": "typing-async-and-migrating-javascript",
+    "title": "Typing Async Code and Migrating JavaScript",
+    "lessons": [
+      "typing-promises-and-async-await",
+      "typing-fetch-and-validating-json",
+      "typing-error-handling-in-catch",
+      "migrating-js-with-check-js",
+      "migrating-js-to-ts-workflow"
+    ]
+  }
+]

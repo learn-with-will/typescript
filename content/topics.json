@@ -1,0 +1,13 @@
+[
+  { "id": "getting-started", "title": "Getting started", "blurb": "What TypeScript is, how the compiler works and how to set up a project.", "order": 1 },
+  { "id": "basic-types", "title": "Basic types", "blurb": "Primitives, arrays, null and undefined, any versus unknown, and type inference.", "order": 2 },
+  { "id": "functions", "title": "Functions", "blurb": "Typing parameters and returns, overloads, this, callbacks and function types.", "order": 3 },
+  { "id": "objects-and-shapes", "title": "Objects and shapes", "blurb": "Object types, interfaces, type aliases, index signatures, arrays and tuples.", "order": 4 },
+  { "id": "unions-and-narrowing", "title": "Unions and narrowing", "blurb": "Union and literal types, type guards, unknown, never and type assertions.", "order": 5 },
+  { "id": "generics", "title": "Generics", "blurb": "Reusable types and functions with type parameters, constraints and defaults.", "order": 6 },
+  { "id": "classes-and-enums", "title": "Classes and enums", "blurb": "Class members, modifiers, inheritance, enums and const assertions.", "order": 7 },
+  { "id": "modules-and-config", "title": "Modules and config", "blurb": "ES modules, declaration files and the tsconfig options that matter.", "order": 8 },
+  { "id": "utility-and-lookup-types", "title": "Utility and lookup types", "blurb": "Built-in utility types plus keyof, typeof and indexed access types.", "order": 9 },
+  { "id": "type-transformations", "title": "Type transformations", "blurb": "Conditional, mapped and template literal types that compute new types.", "order": 10 },
+  { "id": "advanced-patterns", "title": "Advanced patterns", "blurb": "Declaration merging, decorators, typing async code and migrating JavaScript.", "order": 11 }
+]

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://raw.githubusercontent.com/learn-with-will/course-shell/main/course.schema.json",
+  "id": "typescript",
+  "name": "TypeScript Learn",
+  "subject": "TypeScript 7",
+  "description": "Learn TypeScript in five-minute bites: types, generics, conditional and mapped types, declaration files and typing async code.",
+  "brand": {
+    "color": "#3178C6",
+    "scale": {
+      "50": "#eff5fc",
+      "100": "#dbe9f7",
+      "200": "#bdd7ef",
+      "300": "#8fbbe4",
+      "400": "#5f9bd9",
+      "500": "#4084cb",
+      "600": "#3178c6",
+      "700": "#2862a2",
+      "800": "#204e81",
+      "900": "#193c63",
+      "950": "#0f243b"
+    },
+    "gradient": ["#5f9bd9", "#3178c6", "#38bdf8"]
+  },
+  "home": {
+    "headline": ["Learn TypeScript in ", "five-minute bites", "."],
+    "searchExamples": ["generics", "narrowing", "tsconfig"],
+    "featuredCode": {
+      "lang": "typescript",
+      "code": "function first<T>(items: T[]): T | undefined {\n  return items[0];\n}\n\nconst n = first([1, 2, 3]);\n//    ^? number | undefined"
+    },
+    "quizPreview": {
+      "topic": "Basic types",
+      "prompt": "Which type forces you to check a value before using it?",
+      "options": ["any", "unknown", "object"],
+      "selected": 1
+    }
+  },
+  "codeLanguages": ["typescript", "javascript", "bash", "json"]
+}

@@ -1,0 +1,3661 @@
+[
+  {
+    "id": "getting-started-01",
+    "topic": "getting-started",
+    "lesson": "what-typescript-adds",
+    "type": "single-choice",
+    "prompt": "Which statement best describes TypeScript?",
+    "explanation": "TypeScript is a superset of JavaScript that adds a compile-time type layer and compiles down to ordinary JavaScript.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A replacement runtime that runs instead of JavaScript"
+      },
+      {
+        "id": "b",
+        "text": "A typed superset of JavaScript that compiles to plain JavaScript"
+      },
+      {
+        "id": "c",
+        "text": "A JavaScript library you import at runtime"
+      },
+      {
+        "id": "d",
+        "text": "A browser feature for validating data types"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "getting-started-02",
+    "topic": "getting-started",
+    "lesson": "what-typescript-adds",
+    "type": "single-choice",
+    "prompt": "What does it mean that TypeScript's types are \"erased\"?",
+    "explanation": "Type annotations exist only at compile time. The emitted JavaScript contains no types and performs no type checking of its own.",
+    "options": [
+      {
+        "id": "a",
+        "text": "They are checked again while the program runs"
+      },
+      {
+        "id": "b",
+        "text": "They are removed during compilation and have no runtime presence"
+      },
+      {
+        "id": "c",
+        "text": "They are stored in a separate file for the browser to read"
+      },
+      {
+        "id": "d",
+        "text": "They convert values to the declared type at runtime"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "getting-started-03",
+    "topic": "getting-started",
+    "lesson": "what-typescript-adds",
+    "type": "multiple-choice",
+    "prompt": "Which of the following are jobs the TypeScript compiler (tsc) actually does? Select all that apply.",
+    "explanation": "tsc type-checks and emits JavaScript. It does no runtime checking, and two programs differing only in annotations run identically.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Type-checks your code and reports mismatches"
+      },
+      {
+        "id": "b",
+        "text": "Emits plain JavaScript"
+      },
+      {
+        "id": "c",
+        "text": "Validates data types while the program runs"
+      },
+      {
+        "id": "d",
+        "text": "Changes the runtime behavior of correctly-typed code"
+      }
+    ],
+    "answer": [
+      "a",
+      "b"
+    ]
+  },
+  {
+    "id": "getting-started-04",
+    "topic": "getting-started",
+    "lesson": "what-typescript-adds",
+    "type": "fill-blank",
+    "prompt": "TypeScript decides type compatibility by an object's ______ rather than its declared name. (one word)",
+    "explanation": "TypeScript uses structural typing: any value with the required properties matches, regardless of what type it was declared as.",
+    "answer": [
+      "shape",
+      "structure"
+    ]
+  },
+  {
+    "id": "getting-started-05",
+    "topic": "getting-started",
+    "lesson": "what-typescript-adds",
+    "type": "single-choice",
+    "prompt": "What is the headline change in TypeScript 7.0?",
+    "explanation": "TypeScript 7.0 is a native port of the compiler written in Go — roughly ten times faster — while preserving the same language and type-checking rules.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A brand-new type system incompatible with 5.x"
+      },
+      {
+        "id": "b",
+        "text": "A native (Go) port of the compiler that is much faster, with the same language"
+      },
+      {
+        "id": "c",
+        "text": "Types are now checked at runtime"
+      },
+      {
+        "id": "d",
+        "text": "It removes support for JavaScript interop"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "getting-started-06",
+    "topic": "getting-started",
+    "lesson": "what-typescript-adds",
+    "type": "match-pair",
+    "prompt": "Match each term to its meaning.",
+    "explanation": "Annotations are erased, tsc checks and emits, structural typing compares shapes, and TypeScript is a superset of JavaScript.",
+    "pairs": [
+      {
+        "left": "Type annotation",
+        "right": "A compile-time note like ': string' that is erased"
+      },
+      {
+        "left": "tsc",
+        "right": "The compiler that type-checks and emits JavaScript"
+      },
+      {
+        "left": "Structural typing",
+        "right": "Compatibility judged by shape"
+      },
+      {
+        "left": "Superset",
+        "right": "All JavaScript is valid TypeScript"
+      }
+    ]
+  },
+  {
+    "id": "getting-started-07",
+    "topic": "getting-started",
+    "lesson": "install-typescript",
+    "type": "single-choice",
+    "prompt": "Which command installs TypeScript as a project build tool?",
+    "explanation": "TypeScript is a development dependency, installed with npm install --save-dev typescript. You then run it via npx tsc.",
+    "options": [
+      {
+        "id": "a",
+        "text": "npm install --save-dev typescript"
+      },
+      {
+        "id": "b",
+        "text": "npm run typescript"
+      },
+      {
+        "id": "c",
+        "text": "npx create typescript"
+      },
+      {
+        "id": "d",
+        "text": "node install typescript"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "getting-started-08",
+    "topic": "getting-started",
+    "lesson": "install-typescript",
+    "type": "single-choice",
+    "prompt": "What does the `strict` compiler option do?",
+    "explanation": "strict is an umbrella switch enabling the strict-checking family (most importantly strictNullChecks). New projects enable it by default; keep it on.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Makes the compiler run faster"
+      },
+      {
+        "id": "b",
+        "text": "Turns on a family of strict type-checking options, including strictNullChecks"
+      },
+      {
+        "id": "c",
+        "text": "Disables all type checking"
+      },
+      {
+        "id": "d",
+        "text": "Forces every value to be annotated"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "getting-started-09",
+    "topic": "getting-started",
+    "lesson": "install-typescript",
+    "type": "single-choice",
+    "prompt": "How do you type-check a project without producing any JavaScript output?",
+    "explanation": "--noEmit (or \"noEmit\": true) runs the full type check but writes no .js — the way bundler-based apps use tsc as a checker.",
+    "options": [
+      {
+        "id": "a",
+        "text": "tsc --silent"
+      },
+      {
+        "id": "b",
+        "text": "tsc --noEmit"
+      },
+      {
+        "id": "c",
+        "text": "tsc --check-only"
+      },
+      {
+        "id": "d",
+        "text": "tsc --dry"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "getting-started-10",
+    "topic": "getting-started",
+    "lesson": "install-typescript",
+    "type": "fill-blank",
+    "prompt": "The file that configures a TypeScript project is called ______.",
+    "explanation": "tsconfig.json holds the compilerOptions and marks a folder as a TypeScript project. Generate a starter with tsc --init.",
+    "answer": [
+      "tsconfig.json",
+      "tsconfig"
+    ]
+  },
+  {
+    "id": "getting-started-11",
+    "topic": "getting-started",
+    "lesson": "install-typescript",
+    "type": "multiple-choice",
+    "prompt": "Which are good reasons to run tsc through `npx` rather than a global install? Select all that apply.",
+    "explanation": "npx runs the project's pinned version, keeping teammates and CI consistent. It does not perform a permanent global install.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It uses the exact TypeScript version pinned in the project"
+      },
+      {
+        "id": "b",
+        "text": "Everyone on the team and CI compile with the same version"
+      },
+      {
+        "id": "c",
+        "text": "It permanently installs TypeScript on the system"
+      },
+      {
+        "id": "d",
+        "text": "It avoids version drift between machines"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "d"
+    ]
+  },
+  {
+    "id": "getting-started-12",
+    "topic": "getting-started",
+    "lesson": "install-typescript",
+    "type": "ordering",
+    "prompt": "Order the steps to start a new TypeScript project from scratch.",
+    "explanation": "Initialize the package, add TypeScript, generate a tsconfig, then compile.",
+    "answer": [
+      "init",
+      "install",
+      "config",
+      "build"
+    ],
+    "items": [
+      {
+        "id": "init",
+        "text": "npm init -y"
+      },
+      {
+        "id": "install",
+        "text": "npm install --save-dev typescript"
+      },
+      {
+        "id": "config",
+        "text": "npx tsc --init"
+      },
+      {
+        "id": "build",
+        "text": "npx tsc"
+      }
+    ]
+  },
+  {
+    "id": "basic-types-01",
+    "topic": "basic-types",
+    "lesson": "primitives-and-inference",
+    "type": "single-choice",
+    "prompt": "What is the key difference between `any` and `unknown`?",
+    "explanation": "`any` opts a value out of checking. `unknown` is the safe top type: anything is assignable to it, but you must narrow it before using it.",
+    "options": [
+      {
+        "id": "a",
+        "text": "They are identical"
+      },
+      {
+        "id": "b",
+        "text": "`any` disables type checking; `unknown` accepts any value but must be narrowed before use"
+      },
+      {
+        "id": "c",
+        "text": "`unknown` disables type checking; `any` must be narrowed"
+      },
+      {
+        "id": "d",
+        "text": "`any` can only hold objects; `unknown` can only hold primitives"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "basic-types-02",
+    "topic": "basic-types",
+    "lesson": "primitives-and-inference",
+    "type": "single-choice",
+    "prompt": "Does TypeScript have separate types for integers and floating-point numbers?",
+    "explanation": "`number` is a single type for all ordinary numbers. The separate `bigint` type is only for integers beyond the safe range.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes — `int` and `float`"
+      },
+      {
+        "id": "b",
+        "text": "No — `number` covers all ordinary numbers; `bigint` exists for very large integers"
+      },
+      {
+        "id": "c",
+        "text": "Yes — `number` for integers and `decimal` for floats"
+      },
+      {
+        "id": "d",
+        "text": "No — every number is a `bigint`"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "basic-types-03",
+    "topic": "basic-types",
+    "lesson": "primitives-and-inference",
+    "type": "multiple-choice",
+    "prompt": "Which are valid ways to type an array of numbers? Select all that apply.",
+    "explanation": "number[] and Array<number> are equivalent array types. [number] is a one-element tuple, not a general array.",
+    "options": [
+      {
+        "id": "a",
+        "text": "number[]"
+      },
+      {
+        "id": "b",
+        "text": "Array<number>"
+      },
+      {
+        "id": "c",
+        "text": "[number]"
+      },
+      {
+        "id": "d",
+        "text": "numbers"
+      }
+    ],
+    "answer": [
+      "a",
+      "b"
+    ]
+  },
+  {
+    "id": "basic-types-04",
+    "topic": "basic-types",
+    "lesson": "primitives-and-inference",
+    "type": "fill-blank",
+    "prompt": "When you write `let count = 5`, TypeScript ______ the type as number without an annotation. (one word)",
+    "explanation": "TypeScript infers a type from the initializer, so an annotation is often unnecessary.",
+    "answer": [
+      "infers",
+      "inferred"
+    ]
+  },
+  {
+    "id": "basic-types-05",
+    "topic": "basic-types",
+    "lesson": "primitives-and-inference",
+    "type": "single-choice",
+    "prompt": "With strictNullChecks on, does `let name: string = null` compile?",
+    "explanation": "Under strictNullChecks, null and undefined stay out of other types; you must widen the type (string | null) to allow null.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes, null is allowed for any type"
+      },
+      {
+        "id": "b",
+        "text": "No — null isn't assignable to string unless the type includes it (e.g. string | null)"
+      },
+      {
+        "id": "c",
+        "text": "Yes, but only in strict mode"
+      },
+      {
+        "id": "d",
+        "text": "No — string can never hold null even without strict"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "basic-types-06",
+    "topic": "basic-types",
+    "lesson": "primitives-and-inference",
+    "type": "single-choice",
+    "prompt": "Why is `unknown` the better choice than `any` for the result of JSON.parse?",
+    "explanation": "JSON.parse genuinely returns an unknown shape. Typing it as unknown makes you narrow before use, catching mistakes the compiler would miss with any.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It runs faster at runtime"
+      },
+      {
+        "id": "b",
+        "text": "It forces you to check the value's type before using it, preventing silent bugs"
+      },
+      {
+        "id": "c",
+        "text": "It automatically validates the JSON shape"
+      },
+      {
+        "id": "d",
+        "text": "It converts the value to a string"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "basic-types-07",
+    "topic": "basic-types",
+    "lesson": "unknown-safe-top-type",
+    "type": "single-choice",
+    "prompt": "Which type is the type-safe top type that requires narrowing before property access?",
+    "options": [
+      {
+        "id": "a",
+        "text": "any"
+      },
+      {
+        "id": "b",
+        "text": "unknown"
+      },
+      {
+        "id": "c",
+        "text": "never"
+      },
+      {
+        "id": "d",
+        "text": "object"
+      }
+    ],
+    "answer": "b",
+    "explanation": "unknown accepts any value but requires narrowing before calling methods or accessing properties."
+  },
+  {
+    "id": "basic-types-08",
+    "topic": "basic-types",
+    "lesson": "strict-null-checks",
+    "type": "single-choice",
+    "prompt": "Under strictNullChecks, which values can be assigned to a variable of type string?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Any string, null, or undefined"
+      },
+      {
+        "id": "b",
+        "text": "Only string values"
+      },
+      {
+        "id": "c",
+        "text": "String values and null only"
+      },
+      {
+        "id": "d",
+        "text": "Any primitive value"
+      }
+    ],
+    "answer": "b",
+    "explanation": "With strictNullChecks enabled, null and undefined are distinct types and cannot be assigned to string."
+  },
+  {
+    "id": "basic-types-09",
+    "topic": "basic-types",
+    "lesson": "array-type-syntax",
+    "type": "single-choice",
+    "prompt": "Which array type annotation is completely equivalent to Array<string>?",
+    "options": [
+      {
+        "id": "a",
+        "text": "string[]"
+      },
+      {
+        "id": "b",
+        "text": "[string]"
+      },
+      {
+        "id": "c",
+        "text": "readonly string"
+      },
+      {
+        "id": "d",
+        "text": "List<string>"
+      }
+    ],
+    "answer": "a",
+    "explanation": "string[] and Array<string> are completely equivalent in TypeScript."
+  },
+  {
+    "id": "basic-types-10",
+    "topic": "basic-types",
+    "lesson": "any-the-escape-hatch",
+    "type": "single-choice",
+    "prompt": "What is the primary danger of using any in TypeScript code?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It creates runtime memory overhead"
+      },
+      {
+        "id": "b",
+        "text": "It disables compile-time type checking and spreads unchecked"
+      },
+      {
+        "id": "c",
+        "text": "It slows down JavaScript execution speed"
+      },
+      {
+        "id": "d",
+        "text": "It makes values immutable"
+      }
+    ],
+    "answer": "b",
+    "explanation": "any completely disables compiler checks and propagates silently through receiving variables."
+  },
+  {
+    "id": "functions-01",
+    "topic": "functions",
+    "lesson": "typing-parameters-and-returns",
+    "type": "single-choice",
+    "prompt": "For a function's return type, what is the idiomatic default?",
+    "explanation": "Return types are usually inferred. Annotate public functions so the compiler verifies every return path matches the promised type.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Always annotate it explicitly"
+      },
+      {
+        "id": "b",
+        "text": "Let it be inferred, annotating public functions where an explicit contract helps"
+      },
+      {
+        "id": "c",
+        "text": "Never annotate it — annotations are not allowed on returns"
+      },
+      {
+        "id": "d",
+        "text": "Return types must always be `void`"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "functions-02",
+    "topic": "functions",
+    "lesson": "typing-parameters-and-returns",
+    "type": "single-choice",
+    "prompt": "What is the difference between `greeting?: string` and `greeting = 'Hi'` in a parameter list?",
+    "explanation": "An optional parameter's type includes undefined; a default value makes the parameter optional and gives it a concrete value when omitted.",
+    "options": [
+      {
+        "id": "a",
+        "text": "There is no difference"
+      },
+      {
+        "id": "b",
+        "text": "`?` makes it optional (type string | undefined); a default makes it optional and supplies a value, so it's never undefined inside"
+      },
+      {
+        "id": "c",
+        "text": "`?` supplies a default; `=` makes it required"
+      },
+      {
+        "id": "d",
+        "text": "Both make the parameter required"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "functions-03",
+    "topic": "functions",
+    "lesson": "typing-parameters-and-returns",
+    "type": "single-choice",
+    "prompt": "How do you collect an unknown number of trailing arguments into an array?",
+    "explanation": "A rest parameter (...values: number[]) gathers extra arguments into an array. It must be the last parameter.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A rest parameter: function f(...values: number[])"
+      },
+      {
+        "id": "b",
+        "text": "An optional parameter: function f(values?: number[])"
+      },
+      {
+        "id": "c",
+        "text": "The `arguments` keyword only"
+      },
+      {
+        "id": "d",
+        "text": "A tuple parameter: function f([values]: number[])"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "functions-04",
+    "topic": "functions",
+    "lesson": "typing-parameters-and-returns",
+    "type": "fill-blank",
+    "prompt": "TypeScript inferring a callback's parameter types from the surrounding context is called ______ typing. (one word)",
+    "explanation": "Contextual typing infers callback parameter types (e.g. n in [1,2].map(n => n*2) is a number) from the expected function type.",
+    "answer": [
+      "contextual"
+    ]
+  },
+  {
+    "id": "functions-05",
+    "topic": "functions",
+    "lesson": "typing-parameters-and-returns",
+    "type": "single-choice",
+    "prompt": "What does a `void` return type indicate?",
+    "explanation": "void is the return type of side-effect-only functions; the returned value should be ignored.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The function returns null"
+      },
+      {
+        "id": "b",
+        "text": "The function returns no useful value; callers should ignore its return"
+      },
+      {
+        "id": "c",
+        "text": "The function never finishes"
+      },
+      {
+        "id": "d",
+        "text": "The function returns undefined and cannot be called"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "functions-06",
+    "topic": "functions",
+    "lesson": "typing-parameters-and-returns",
+    "type": "match-pair",
+    "prompt": "Match each function feature to its syntax.",
+    "explanation": "? marks optional, = supplies a default, ... collects rest arguments, and (a: T) => R is a function type expression.",
+    "pairs": [
+      {
+        "left": "Optional parameter",
+        "right": "greeting?: string"
+      },
+      {
+        "left": "Default parameter",
+        "right": "greeting = 'Hi'"
+      },
+      {
+        "left": "Rest parameter",
+        "right": "...values: number[]"
+      },
+      {
+        "left": "Function type",
+        "right": "(a: number) => number"
+      }
+    ]
+  },
+  {
+    "id": "functions-07",
+    "topic": "functions",
+    "lesson": "function-overloads",
+    "type": "single-choice",
+    "prompt": "In an overloaded function, which signatures can callers use?",
+    "explanation": "Callers see only the overload signatures. The implementation signature exists to satisfy them and isn't part of the public callable type.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The implementation signature"
+      },
+      {
+        "id": "b",
+        "text": "Only the overload signatures; the implementation signature isn't callable from outside"
+      },
+      {
+        "id": "c",
+        "text": "All signatures equally"
+      },
+      {
+        "id": "d",
+        "text": "None — overloads are documentation only"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "functions-08",
+    "topic": "functions",
+    "lesson": "function-overloads",
+    "type": "single-choice",
+    "prompt": "What does a `this` parameter do, and does it affect the arguments?",
+    "explanation": "A this parameter is a type-only first parameter. It types this and is erased; callers don't pass it and the real arguments are unchanged.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It adds a required first argument callers must pass"
+      },
+      {
+        "id": "b",
+        "text": "It types the value of `this` inside the function; it's type-only, erased, and doesn't change the real parameters"
+      },
+      {
+        "id": "c",
+        "text": "It makes the function static"
+      },
+      {
+        "id": "d",
+        "text": "It binds this permanently at runtime"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "functions-09",
+    "topic": "functions",
+    "lesson": "function-overloads",
+    "type": "single-choice",
+    "prompt": "How is an assertion function different from a type guard?",
+    "explanation": "A type guard returns a boolean predicate. An assertion function throws if the condition fails and, via an asserts return type, narrows without an if.",
+    "options": [
+      {
+        "id": "a",
+        "text": "There is no difference"
+      },
+      {
+        "id": "b",
+        "text": "A type guard returns a boolean you branch on; an assertion function throws on failure and narrows the value for the rest of the scope"
+      },
+      {
+        "id": "c",
+        "text": "An assertion function returns a boolean; a type guard throws"
+      },
+      {
+        "id": "d",
+        "text": "Assertion functions only work on numbers"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "functions-10",
+    "topic": "functions",
+    "lesson": "function-overloads",
+    "type": "fill-blank",
+    "prompt": "Write the return annotation that narrows `value` to string if the function doesn't throw: asserts value ______ string. (one word)",
+    "explanation": "`asserts value is string` narrows value to string for the rest of the scope when the assertion function returns.",
+    "answer": [
+      "is"
+    ]
+  },
+  {
+    "id": "functions-11",
+    "topic": "functions",
+    "lesson": "function-overloads",
+    "type": "single-choice",
+    "prompt": "When should you prefer a single signature over overloads?",
+    "explanation": "Overloads are worthwhile only when the return type genuinely depends on the argument shape; otherwise a single signature is clearer and safer.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Never — overloads are always better"
+      },
+      {
+        "id": "b",
+        "text": "When a union return type is just as accurate — overloads add complexity and can hide mistakes"
+      },
+      {
+        "id": "c",
+        "text": "Only when there is one parameter"
+      },
+      {
+        "id": "d",
+        "text": "Only in non-strict mode"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "functions-12",
+    "topic": "functions",
+    "lesson": "function-overloads",
+    "type": "single-choice",
+    "prompt": "What happens if an assertion function's runtime check doesn't match its `asserts` type?",
+    "explanation": "As with type guards, the compiler trusts the assertion. A dishonest runtime check yields an unsafe narrowing and possible runtime errors.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The compiler catches it automatically"
+      },
+      {
+        "id": "b",
+        "text": "The compiler still trusts the assertion, producing an unsafe narrowing that can crash at runtime"
+      },
+      {
+        "id": "c",
+        "text": "It becomes a syntax error"
+      },
+      {
+        "id": "d",
+        "text": "Nothing — assertions have no effect"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "objects-and-shapes-01",
+    "topic": "objects-and-shapes",
+    "lesson": "interfaces-for-object-shapes",
+    "type": "single-choice",
+    "prompt": "What does `readonly` on an interface property guarantee?",
+    "explanation": "readonly is a compile-time rule forbidding reassignment. Like all types it is erased, so the runtime object is still a normal mutable object.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The object is frozen at runtime"
+      },
+      {
+        "id": "b",
+        "text": "The property cannot be reassigned after creation (a compile-time check)"
+      },
+      {
+        "id": "c",
+        "text": "The property is optional"
+      },
+      {
+        "id": "d",
+        "text": "The property is private"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "objects-and-shapes-02",
+    "topic": "objects-and-shapes",
+    "lesson": "interfaces-for-object-shapes",
+    "type": "single-choice",
+    "prompt": "When you read an optional property `email?: string`, what is its type?",
+    "explanation": "An optional property may be absent, so reading it yields string | undefined; you must handle the missing case.",
+    "options": [
+      {
+        "id": "a",
+        "text": "string"
+      },
+      {
+        "id": "b",
+        "text": "string | undefined"
+      },
+      {
+        "id": "c",
+        "text": "string | null"
+      },
+      {
+        "id": "d",
+        "text": "any"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "objects-and-shapes-03",
+    "topic": "objects-and-shapes",
+    "lesson": "interfaces-for-object-shapes",
+    "type": "single-choice",
+    "prompt": "When do excess property checks apply?",
+    "explanation": "Excess property checks reject unknown properties on fresh object literals. Assigning through a variable first uses ordinary structural compatibility instead.",
+    "options": [
+      {
+        "id": "a",
+        "text": "To every assignment"
+      },
+      {
+        "id": "b",
+        "text": "Only when assigning a fresh object literal directly to a typed target"
+      },
+      {
+        "id": "c",
+        "text": "Only to readonly properties"
+      },
+      {
+        "id": "d",
+        "text": "Never — TypeScript allows extra properties always"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "objects-and-shapes-04",
+    "topic": "objects-and-shapes",
+    "lesson": "interfaces-for-object-shapes",
+    "type": "fill-blank",
+    "prompt": "To allow arbitrary string keys with number values, you add an ______ signature like [key: string]: number. (one word)",
+    "explanation": "An index signature ([key: string]: number) describes open-ended keys of a known value type.",
+    "answer": [
+      "index"
+    ]
+  },
+  {
+    "id": "objects-and-shapes-05",
+    "topic": "objects-and-shapes",
+    "lesson": "interfaces-for-object-shapes",
+    "type": "single-choice",
+    "prompt": "How do you make one interface include the properties of another?",
+    "explanation": "Interfaces compose with extends, inheriting the base interface's members.",
+    "options": [
+      {
+        "id": "a",
+        "text": "interface Dog implements Animal"
+      },
+      {
+        "id": "b",
+        "text": "interface Dog extends Animal"
+      },
+      {
+        "id": "c",
+        "text": "interface Dog & Animal"
+      },
+      {
+        "id": "d",
+        "text": "interface Dog from Animal"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "objects-and-shapes-06",
+    "topic": "objects-and-shapes",
+    "lesson": "interfaces-for-object-shapes",
+    "type": "multiple-choice",
+    "prompt": "Which statements about structural typing are correct? Select all that apply.",
+    "explanation": "With structural typing, any value whose shape has the required properties matches — no explicit declaration or matching name is needed.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Any object with the required properties matches the interface"
+      },
+      {
+        "id": "b",
+        "text": "An object must be explicitly declared as the interface type to match"
+      },
+      {
+        "id": "c",
+        "text": "Compatibility is judged by shape"
+      },
+      {
+        "id": "d",
+        "text": "The object's declared name must equal the interface name"
+      }
+    ],
+    "answer": [
+      "a",
+      "c"
+    ]
+  },
+  {
+    "id": "objects-and-shapes-07",
+    "topic": "objects-and-shapes",
+    "lesson": "type-aliases-basics",
+    "type": "single-choice",
+    "prompt": "What can a `type` alias name that an `interface` cannot?",
+    "explanation": "Type aliases can name any type, including unions, tuples, and function types. Interfaces describe object-like shapes only.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Object shapes"
+      },
+      {
+        "id": "b",
+        "text": "Any non-object type — unions, tuples, primitives, and function types"
+      },
+      {
+        "id": "c",
+        "text": "Only classes"
+      },
+      {
+        "id": "d",
+        "text": "Nothing — they are identical"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "objects-and-shapes-08",
+    "topic": "objects-and-shapes",
+    "lesson": "type-aliases-basics",
+    "type": "single-choice",
+    "prompt": "Which of `type` and `interface` supports declaration merging?",
+    "explanation": "Declaring the same interface twice merges the declarations. A duplicate type alias name is an error — aliases don't merge.",
+    "options": [
+      {
+        "id": "a",
+        "text": "interface"
+      },
+      {
+        "id": "b",
+        "text": "type"
+      },
+      {
+        "id": "c",
+        "text": "Both"
+      },
+      {
+        "id": "d",
+        "text": "Neither"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "objects-and-shapes-09",
+    "topic": "objects-and-shapes",
+    "lesson": "type-aliases-basics",
+    "type": "single-choice",
+    "prompt": "How is a tuple like `[number, number]` different from an array `number[]`?",
+    "explanation": "A tuple fixes both the length and the type at each position. number[] is any-length with a single element type.",
+    "options": [
+      {
+        "id": "a",
+        "text": "There is no difference"
+      },
+      {
+        "id": "b",
+        "text": "A tuple has a fixed length and a specific type at each position; number[] fixes neither"
+      },
+      {
+        "id": "c",
+        "text": "A tuple can only hold strings"
+      },
+      {
+        "id": "d",
+        "text": "number[] has a fixed length; a tuple does not"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "objects-and-shapes-10",
+    "topic": "objects-and-shapes",
+    "lesson": "type-aliases-basics",
+    "type": "fill-blank",
+    "prompt": "To make an array that cannot be mutated, type it as ______ number[]. (one word)",
+    "explanation": "readonly number[] (or ReadonlyArray<number>) forbids mutation like push or index assignment.",
+    "answer": [
+      "readonly"
+    ]
+  },
+  {
+    "id": "objects-and-shapes-11",
+    "topic": "objects-and-shapes",
+    "lesson": "type-aliases-basics",
+    "type": "single-choice",
+    "prompt": "How do you compose types with a `type` alias, since it has no `extends`?",
+    "explanation": "An intersection (A & B) combines all members of both types — the alias equivalent of interface extends.",
+    "options": [
+      {
+        "id": "a",
+        "text": "With a union: A | B"
+      },
+      {
+        "id": "b",
+        "text": "With an intersection: A & B"
+      },
+      {
+        "id": "c",
+        "text": "With the merge keyword"
+      },
+      {
+        "id": "d",
+        "text": "You cannot compose type aliases"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "objects-and-shapes-12",
+    "topic": "objects-and-shapes",
+    "lesson": "type-aliases-basics",
+    "type": "single-choice",
+    "prompt": "What do named tuple members like `[start: number, end: number]` change about the type?",
+    "explanation": "Named tuple members are purely for readability; they don't change the type or add runtime behavior.",
+    "options": [
+      {
+        "id": "a",
+        "text": "They enforce the labels at runtime"
+      },
+      {
+        "id": "b",
+        "text": "Nothing about the type — the labels are documentation for readability only"
+      },
+      {
+        "id": "c",
+        "text": "They make the tuple readonly"
+      },
+      {
+        "id": "d",
+        "text": "They allow extra elements"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "unions-and-narrowing-01",
+    "topic": "unions-and-narrowing",
+    "lesson": "union-types",
+    "type": "single-choice",
+    "prompt": "What can you do with a value of type `string | number` before narrowing it?",
+    "explanation": "Until you narrow, only operations valid for every member of the union are allowed; member-specific methods require narrowing first.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Any string or number operation"
+      },
+      {
+        "id": "b",
+        "text": "Only operations valid for both string and number"
+      },
+      {
+        "id": "c",
+        "text": "Nothing at all"
+      },
+      {
+        "id": "d",
+        "text": "Only number operations"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "unions-and-narrowing-02",
+    "topic": "unions-and-narrowing",
+    "lesson": "union-types",
+    "type": "single-choice",
+    "prompt": "Why does `let x = 'active'` have type `string` while `const x = 'active'` has type `'active'`?",
+    "explanation": "A reassignable let widens the literal to its general type; a const keeps the narrow literal type because it can never change.",
+    "options": [
+      {
+        "id": "a",
+        "text": "let is faster than const"
+      },
+      {
+        "id": "b",
+        "text": "let can be reassigned, so the literal widens to string; const can't change, so the literal type is kept"
+      },
+      {
+        "id": "c",
+        "text": "const always widens; let keeps literals"
+      },
+      {
+        "id": "d",
+        "text": "There is no difference"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "unions-and-narrowing-03",
+    "topic": "unions-and-narrowing",
+    "lesson": "union-types",
+    "type": "fill-blank",
+    "prompt": "A type made of exact allowed values like 'sm' | 'md' | 'lg' is called a union of ______ types. (one word)",
+    "explanation": "A union of literal types restricts a value to a fixed set of exact options, like a drop-down menu.",
+    "answer": [
+      "literal"
+    ]
+  },
+  {
+    "id": "unions-and-narrowing-04",
+    "topic": "unions-and-narrowing",
+    "lesson": "union-types",
+    "type": "single-choice",
+    "prompt": "Which operator is the first tool for narrowing a union of primitives?",
+    "explanation": "typeof narrows primitive unions (e.g. typeof id === 'string' narrows id to string inside that branch).",
+    "options": [
+      {
+        "id": "a",
+        "text": "instanceof"
+      },
+      {
+        "id": "b",
+        "text": "typeof"
+      },
+      {
+        "id": "c",
+        "text": "keyof"
+      },
+      {
+        "id": "d",
+        "text": "in"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "unions-and-narrowing-05",
+    "topic": "unions-and-narrowing",
+    "lesson": "union-types",
+    "type": "single-choice",
+    "prompt": "Why prefer a literal union over a plain `string` for a size setting?",
+    "explanation": "A literal union turns a free-text string into a fixed set of choices, so an invalid value is caught at compile time.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It runs faster"
+      },
+      {
+        "id": "b",
+        "text": "It restricts the value to the exact allowed options, making invalid values compile errors"
+      },
+      {
+        "id": "c",
+        "text": "It uses less memory at runtime"
+      },
+      {
+        "id": "d",
+        "text": "Plain string is not allowed as a parameter type"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "unions-and-narrowing-06",
+    "topic": "unions-and-narrowing",
+    "lesson": "union-types",
+    "type": "single-choice",
+    "prompt": "How can you force the compiler to require handling of every member of a literal union?",
+    "explanation": "Record<Status, string> requires an entry for every member of Status, so omitting one is a compile error.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use it as the key type of a Record, e.g. Record<Status, string>"
+      },
+      {
+        "id": "b",
+        "text": "Mark the union readonly"
+      },
+      {
+        "id": "c",
+        "text": "Wrap it in an interface"
+      },
+      {
+        "id": "d",
+        "text": "There is no way to enforce this"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "unions-and-narrowing-07",
+    "topic": "unions-and-narrowing",
+    "lesson": "truthiness-and-equality-narrowing",
+    "type": "single-choice",
+    "prompt": "What makes a union a \"discriminated\" union?",
+    "explanation": "A discriminant is a shared literal property (e.g. kind: 'circle') unique per member, letting a switch narrow the whole object in each case.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Every member is an object"
+      },
+      {
+        "id": "b",
+        "text": "Each member shares a common literal property (a discriminant) that a switch can narrow on"
+      },
+      {
+        "id": "c",
+        "text": "It has exactly two members"
+      },
+      {
+        "id": "d",
+        "text": "It uses the readonly modifier"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "unions-and-narrowing-08",
+    "topic": "unions-and-narrowing",
+    "lesson": "truthiness-and-equality-narrowing",
+    "type": "single-choice",
+    "prompt": "Which operator narrows an object union by checking for a property's existence?",
+    "explanation": "The in operator (e.g. if ('swim' in animal)) narrows a union to the member that has that property.",
+    "options": [
+      {
+        "id": "a",
+        "text": "typeof"
+      },
+      {
+        "id": "b",
+        "text": "in"
+      },
+      {
+        "id": "c",
+        "text": "keyof"
+      },
+      {
+        "id": "d",
+        "text": "as"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "unions-and-narrowing-09",
+    "topic": "unions-and-narrowing",
+    "lesson": "truthiness-and-equality-narrowing",
+    "type": "single-choice",
+    "prompt": "What is the return type of a user-defined type guard function?",
+    "explanation": "A type guard returns a predicate like `value is Type`. When it returns true, the compiler narrows the argument to that type.",
+    "options": [
+      {
+        "id": "a",
+        "text": "boolean"
+      },
+      {
+        "id": "b",
+        "text": "A type predicate, e.g. `value is Type`"
+      },
+      {
+        "id": "c",
+        "text": "void"
+      },
+      {
+        "id": "d",
+        "text": "unknown"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "unions-and-narrowing-10",
+    "topic": "unions-and-narrowing",
+    "lesson": "truthiness-and-equality-narrowing",
+    "type": "single-choice",
+    "prompt": "Which narrows a class instance?",
+    "explanation": "instanceof narrows to a class type (e.g. date instanceof Date). typeof is for primitives.",
+    "options": [
+      {
+        "id": "a",
+        "text": "typeof"
+      },
+      {
+        "id": "b",
+        "text": "instanceof"
+      },
+      {
+        "id": "c",
+        "text": "in only"
+      },
+      {
+        "id": "d",
+        "text": "keyof"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "unions-and-narrowing-11",
+    "topic": "unions-and-narrowing",
+    "lesson": "truthiness-and-equality-narrowing",
+    "type": "fill-blank",
+    "prompt": "TypeScript tracking a value's type across branches of your code is called control-flow ______. (one word)",
+    "explanation": "Control-flow analysis is how TypeScript refines a value's type inside checks like if and switch.",
+    "answer": [
+      "analysis"
+    ]
+  },
+  {
+    "id": "unions-and-narrowing-12",
+    "topic": "unions-and-narrowing",
+    "lesson": "truthiness-and-equality-narrowing",
+    "type": "single-choice",
+    "prompt": "Why is a \"lying\" type guard dangerous?",
+    "explanation": "The compiler believes the predicate. If the runtime check doesn't actually match the type, you get an unsafe cast that can crash at runtime.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It slows down the compiler"
+      },
+      {
+        "id": "b",
+        "text": "The compiler trusts the predicate, so a wrong runtime check produces an unsafe narrowing and possible runtime errors"
+      },
+      {
+        "id": "c",
+        "text": "It causes a syntax error"
+      },
+      {
+        "id": "d",
+        "text": "It is not allowed by TypeScript"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "unions-and-narrowing-13",
+    "topic": "unions-and-narrowing",
+    "lesson": "the-never-type",
+    "type": "single-choice",
+    "prompt": "What is `never`, and where is it most useful?",
+    "explanation": "never has no values. Assigning a switch's default case to a never variable makes the compiler error if a new union member isn't handled.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The type of any value; useful for logging"
+      },
+      {
+        "id": "b",
+        "text": "The bottom type with no values; most useful for exhaustiveness checks that force handling every union member"
+      },
+      {
+        "id": "c",
+        "text": "A synonym for undefined"
+      },
+      {
+        "id": "d",
+        "text": "The type of empty arrays"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "unions-and-narrowing-14",
+    "topic": "unions-and-narrowing",
+    "lesson": "the-never-type",
+    "type": "single-choice",
+    "prompt": "Does a type assertion (`as`) perform a runtime check or conversion?",
+    "explanation": "An assertion only tells the compiler to treat a value as a type. It emits no runtime check or conversion, so an incorrect assertion causes runtime bugs.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes, it validates the value at runtime"
+      },
+      {
+        "id": "b",
+        "text": "No — it's a compile-time-only override; if you're wrong, the bug surfaces at runtime"
+      },
+      {
+        "id": "c",
+        "text": "It converts the value to the target type"
+      },
+      {
+        "id": "d",
+        "text": "It throws if the types don't match"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "unions-and-narrowing-15",
+    "topic": "unions-and-narrowing",
+    "lesson": "the-never-type",
+    "type": "single-choice",
+    "prompt": "What does `satisfies` do that a type annotation does not?",
+    "explanation": "satisfies checks that a value conforms to a type while keeping its specific inferred types — unlike an annotation, which widens the value to the target type.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It converts the value at runtime"
+      },
+      {
+        "id": "b",
+        "text": "It validates a value against a type without widening the value's inferred type, preserving precise literal/member types"
+      },
+      {
+        "id": "c",
+        "text": "It disables type checking for the value"
+      },
+      {
+        "id": "d",
+        "text": "It makes the value readonly"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "unions-and-narrowing-16",
+    "topic": "unions-and-narrowing",
+    "lesson": "the-never-type",
+    "type": "single-choice",
+    "prompt": "When should you avoid the non-null assertion `!`?",
+    "explanation": "The ! operator claims a value isn't null/undefined with no runtime check. Prefer a real check or default; a wrong assertion crashes at runtime.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Never — it's always safe"
+      },
+      {
+        "id": "b",
+        "text": "Whenever a real check or default is possible — a wrong `!` crashes at runtime"
+      },
+      {
+        "id": "c",
+        "text": "Only inside classes"
+      },
+      {
+        "id": "d",
+        "text": "Only when the value is a number"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "unions-and-narrowing-17",
+    "topic": "unions-and-narrowing",
+    "lesson": "the-never-type",
+    "type": "fill-blank",
+    "prompt": "To force a cast between unrelated types you must route through `as unknown as Type`, which bypasses TypeScript's ______ rule. (one word)",
+    "explanation": "TypeScript allows assertions only between sufficiently overlapping types; going through unknown bypasses that overlap rule — a red flag.",
+    "answer": [
+      "overlap"
+    ]
+  },
+  {
+    "id": "unions-and-narrowing-18",
+    "topic": "unions-and-narrowing",
+    "lesson": "the-never-type",
+    "type": "single-choice",
+    "prompt": "Why prefer `unknown` over `any` for a `catch` clause or parsed JSON?",
+    "explanation": "unknown requires narrowing before use, so you must check the value's actual shape — catching mistakes that any would let slip through silently.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is faster"
+      },
+      {
+        "id": "b",
+        "text": "It forces you to narrow before using the value, preventing silent runtime errors"
+      },
+      {
+        "id": "c",
+        "text": "It validates the value automatically"
+      },
+      {
+        "id": "d",
+        "text": "any is not allowed in catch"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "generics-01",
+    "topic": "generics",
+    "lesson": "generic-functions",
+    "type": "single-choice",
+    "prompt": "What problem do generics solve that `any` does not?",
+    "explanation": "A type parameter captures the caller's type and reuses it, so information (like input relating to output) is preserved — unlike any, which discards it.",
+    "options": [
+      {
+        "id": "a",
+        "text": "They make code run faster"
+      },
+      {
+        "id": "b",
+        "text": "They preserve the relationship between types (e.g. input to output), keeping full type safety"
+      },
+      {
+        "id": "c",
+        "text": "They disable type checking"
+      },
+      {
+        "id": "d",
+        "text": "They only work with numbers"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "generics-02",
+    "topic": "generics",
+    "lesson": "generic-functions",
+    "type": "single-choice",
+    "prompt": "Do you usually pass type arguments explicitly, like `identity<string>('hi')`?",
+    "explanation": "Type arguments are usually inferred from the values you pass; you supply them explicitly only when inference cannot determine them.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes, always"
+      },
+      {
+        "id": "b",
+        "text": "No — TypeScript infers the type argument from the value; you specify it only when inference can't"
+      },
+      {
+        "id": "c",
+        "text": "Only for numbers"
+      },
+      {
+        "id": "d",
+        "text": "Type arguments are never allowed explicitly"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "generics-03",
+    "topic": "generics",
+    "lesson": "generic-functions",
+    "type": "fill-blank",
+    "prompt": "To limit a type parameter so you can use a property inside a generic, you add a constraint with the ______ keyword. (one word)",
+    "explanation": "A constraint like <T extends { length: number }> guarantees T has the needed members, so you can safely use them.",
+    "answer": [
+      "extends"
+    ]
+  },
+  {
+    "id": "generics-04",
+    "topic": "generics",
+    "lesson": "generic-functions",
+    "type": "single-choice",
+    "prompt": "How do you make `getProperty(obj, key)` reject keys that don't exist on obj?",
+    "explanation": "K extends keyof T limits key to real keys of T, and T[K] returns the exact value type — so invalid keys are compile errors.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Type key as string"
+      },
+      {
+        "id": "b",
+        "text": "Constrain the key: <T, K extends keyof T>(obj: T, key: K): T[K]"
+      },
+      {
+        "id": "c",
+        "text": "Type key as any"
+      },
+      {
+        "id": "d",
+        "text": "Use an index signature"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "generics-05",
+    "topic": "generics",
+    "lesson": "generic-functions",
+    "type": "single-choice",
+    "prompt": "When is adding a type parameter NOT worth it?",
+    "explanation": "A type parameter earns its place by connecting positions (input to output, key to value). Used once with no relationship, it just adds noise.",
+    "options": [
+      {
+        "id": "a",
+        "text": "When it connects an input to an output"
+      },
+      {
+        "id": "b",
+        "text": "When it appears only once and carries no relationship — a concrete type is clearer"
+      },
+      {
+        "id": "c",
+        "text": "When it has a constraint"
+      },
+      {
+        "id": "d",
+        "text": "Type parameters are always worth adding"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "generics-06",
+    "topic": "generics",
+    "lesson": "generic-functions",
+    "type": "multiple-choice",
+    "prompt": "Which can be generic in TypeScript? Select all that apply.",
+    "explanation": "Functions, interfaces, and classes can all take type parameters. A boolean literal is a value/type, not something parameterized.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Functions"
+      },
+      {
+        "id": "b",
+        "text": "Interfaces"
+      },
+      {
+        "id": "c",
+        "text": "Classes"
+      },
+      {
+        "id": "d",
+        "text": "Boolean literals"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "generics-07",
+    "topic": "generics",
+    "lesson": "variance-in-generics",
+    "type": "single-choice",
+    "prompt": "Are arrays covariant or contravariant in their element type?",
+    "explanation": "Containers and outputs are covariant: since Dog is a subtype of Animal, a Dog[] can be used where an Animal[] is expected.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Covariant — a Dog[] is usable as an Animal[] because Dog is a subtype of Animal"
+      },
+      {
+        "id": "b",
+        "text": "Contravariant — an Animal[] is usable as a Dog[]"
+      },
+      {
+        "id": "c",
+        "text": "Neither — arrays are invariant"
+      },
+      {
+        "id": "d",
+        "text": "Arrays have no variance"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "generics-08",
+    "topic": "generics",
+    "lesson": "variance-in-generics",
+    "type": "single-choice",
+    "prompt": "Why can a `Handler<Animal>` be used where a `Handler<Dog>` is expected?",
+    "explanation": "Parameters are contravariant: a function accepting the wider type (Animal) safely stands in where the narrower input (Dog) is needed.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Function parameters are covariant"
+      },
+      {
+        "id": "b",
+        "text": "Function parameters are contravariant — a handler that accepts any Animal can safely accept a Dog"
+      },
+      {
+        "id": "c",
+        "text": "Because Dog extends Handler"
+      },
+      {
+        "id": "d",
+        "text": "It cannot be used that way"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "generics-09",
+    "topic": "generics",
+    "lesson": "variance-in-generics",
+    "type": "single-choice",
+    "prompt": "What does a `const` type parameter do?",
+    "explanation": "A const type parameter (TypeScript 5.0) infers the narrowest, literal-preserving type — so callers get precise types without writing as const.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Makes the parameter readonly at runtime"
+      },
+      {
+        "id": "b",
+        "text": "Infers the narrowest type for the argument (as if `as const` were written), preserving literal types"
+      },
+      {
+        "id": "c",
+        "text": "Requires a constant value"
+      },
+      {
+        "id": "d",
+        "text": "Disables inference"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "generics-10",
+    "topic": "generics",
+    "lesson": "variance-in-generics",
+    "type": "single-choice",
+    "prompt": "For `pair<T>(a: T, b: T)`, what is T when you call `pair(1, 'a')`?",
+    "explanation": "T appears in both arguments, so TypeScript infers the best common type across them — here the union string | number.",
+    "options": [
+      {
+        "id": "a",
+        "text": "number"
+      },
+      {
+        "id": "b",
+        "text": "string | number — the best common type across both argument positions"
+      },
+      {
+        "id": "c",
+        "text": "never"
+      },
+      {
+        "id": "d",
+        "text": "unknown"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "generics-11",
+    "topic": "generics",
+    "lesson": "variance-in-generics",
+    "type": "fill-blank",
+    "prompt": "The strict option that makes function-parameter checking sound (contravariant) is strict______Types. (one word to complete)",
+    "explanation": "strictFunctionTypes checks function-type parameters contravariantly, catching unsafe substitutions the loose rules would allow.",
+    "answer": [
+      "Function",
+      "function"
+    ]
+  },
+  {
+    "id": "generics-12",
+    "topic": "generics",
+    "lesson": "variance-in-generics",
+    "type": "single-choice",
+    "prompt": "How do you guarantee a value matches the specific key it's set on?",
+    "explanation": "K extends keyof T plus a value typed T[K] ties the value type to the chosen key, so mismatches are impossible.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Type both as any"
+      },
+      {
+        "id": "b",
+        "text": "Constrain with K extends keyof T and type the value as T[K]"
+      },
+      {
+        "id": "c",
+        "text": "Use a union of all value types"
+      },
+      {
+        "id": "d",
+        "text": "It cannot be guaranteed"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "classes-and-enums-01",
+    "topic": "classes-and-enums",
+    "lesson": "class-member-visibility",
+    "type": "single-choice",
+    "prompt": "What is the difference between TypeScript's `private` and JavaScript's `#private`?",
+    "explanation": "private is a compile-time convention that's erased at runtime, so the field is still accessible then. #private is enforced by the JavaScript runtime.",
+    "options": [
+      {
+        "id": "a",
+        "text": "They are identical"
+      },
+      {
+        "id": "b",
+        "text": "`private` is a compile-time check that's erased; `#private` is truly private at runtime"
+      },
+      {
+        "id": "c",
+        "text": "`#private` is compile-time only; `private` is runtime"
+      },
+      {
+        "id": "d",
+        "text": "`private` works only on methods"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "classes-and-enums-02",
+    "topic": "classes-and-enums",
+    "lesson": "class-member-visibility",
+    "type": "single-choice",
+    "prompt": "What does a parameter property do?",
+    "explanation": "Putting public/private/protected/readonly on a constructor parameter declares and assigns the field in one step, removing boilerplate.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nothing — it's a syntax error"
+      },
+      {
+        "id": "b",
+        "text": "A constructor parameter marked with a modifier becomes a class field, declared and assigned automatically"
+      },
+      {
+        "id": "c",
+        "text": "It makes the parameter optional"
+      },
+      {
+        "id": "d",
+        "text": "It marks the parameter as static"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "classes-and-enums-03",
+    "topic": "classes-and-enums",
+    "lesson": "class-member-visibility",
+    "type": "single-choice",
+    "prompt": "How does `implements` differ from `extends`?",
+    "explanation": "implements is a compile-time contract check with no inherited code; extends inherits a base class's implementation.",
+    "options": [
+      {
+        "id": "a",
+        "text": "They are the same"
+      },
+      {
+        "id": "b",
+        "text": "implements checks a class satisfies an interface's shape but inherits no code; extends inherits implementation from a base class"
+      },
+      {
+        "id": "c",
+        "text": "implements inherits code; extends only checks shape"
+      },
+      {
+        "id": "d",
+        "text": "extends is only for interfaces"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "classes-and-enums-04",
+    "topic": "classes-and-enums",
+    "lesson": "class-member-visibility",
+    "type": "single-choice",
+    "prompt": "Can you create an instance of an `abstract` class directly?",
+    "explanation": "An abstract class can't be instantiated; it serves as a base that subclasses complete by implementing its abstract members.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes, always"
+      },
+      {
+        "id": "b",
+        "text": "No — you must subclass it and implement its abstract members"
+      },
+      {
+        "id": "c",
+        "text": "Only if it has a constructor"
+      },
+      {
+        "id": "d",
+        "text": "Only in strict mode"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "classes-and-enums-05",
+    "topic": "classes-and-enums",
+    "lesson": "class-member-visibility",
+    "type": "fill-blank",
+    "prompt": "Under strict, the ______ check requires class fields to be initialized in their declaration or the constructor. (name of the option, one word/identifier)",
+    "explanation": "strictPropertyInitialization (part of strict) flags fields that aren't initialized, since they could otherwise be undefined.",
+    "answer": [
+      "strictPropertyInitialization"
+    ]
+  },
+  {
+    "id": "classes-and-enums-06",
+    "topic": "classes-and-enums",
+    "lesson": "class-member-visibility",
+    "type": "match-pair",
+    "prompt": "Match each class feature to what it does.",
+    "explanation": "static is class-level, readonly forbids later reassignment, abstract can't be instantiated, and #private is runtime-private.",
+    "pairs": [
+      {
+        "left": "static",
+        "right": "Belongs to the class, not instances"
+      },
+      {
+        "left": "readonly",
+        "right": "Assignable only in declaration/constructor"
+      },
+      {
+        "left": "abstract",
+        "right": "Non-instantiable base with members to implement"
+      },
+      {
+        "left": "#private",
+        "right": "Truly private at runtime"
+      }
+    ]
+  },
+  {
+    "id": "classes-and-enums-07",
+    "topic": "classes-and-enums",
+    "lesson": "numeric-enums-and-reverse-mapping",
+    "type": "single-choice",
+    "prompt": "What runtime artifact does a numeric enum produce?",
+    "explanation": "Unlike types, an enum emits a runtime object. A numeric enum also adds a reverse mapping from value back to name.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nothing — enums are fully erased"
+      },
+      {
+        "id": "b",
+        "text": "An object mapping names to values and, via reverse mapping, values back to names"
+      },
+      {
+        "id": "c",
+        "text": "A frozen array of strings"
+      },
+      {
+        "id": "d",
+        "text": "A single number"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "classes-and-enums-08",
+    "topic": "classes-and-enums",
+    "lesson": "numeric-enums-and-reverse-mapping",
+    "type": "single-choice",
+    "prompt": "Do string enums have a reverse mapping?",
+    "explanation": "String enums do not get a reverse mapping; that behavior is specific to numeric enums.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes"
+      },
+      {
+        "id": "b",
+        "text": "No — only numeric enums map values back to names"
+      },
+      {
+        "id": "c",
+        "text": "Only in strict mode"
+      },
+      {
+        "id": "d",
+        "text": "Only const enums do"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "classes-and-enums-09",
+    "topic": "classes-and-enums",
+    "lesson": "numeric-enums-and-reverse-mapping",
+    "type": "single-choice",
+    "prompt": "Why can `const enum` be problematic?",
+    "explanation": "const enum values are inlined and require seeing the definition, which breaks under isolatedModules used by esbuild/SWC/Babel.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is slower at runtime"
+      },
+      {
+        "id": "b",
+        "text": "It is inlined at compile time and conflicts with isolatedModules, the single-file transpile mode many bundlers use"
+      },
+      {
+        "id": "c",
+        "text": "It cannot hold string values"
+      },
+      {
+        "id": "d",
+        "text": "It is not valid TypeScript"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "classes-and-enums-10",
+    "topic": "classes-and-enums",
+    "lesson": "numeric-enums-and-reverse-mapping",
+    "type": "single-choice",
+    "prompt": "What does `['a', 'b'] as const` infer as its type?",
+    "explanation": "as const infers the narrowest, deeply read-only type, keeping the literal element types: readonly ['a', 'b'].",
+    "options": [
+      {
+        "id": "a",
+        "text": "string[]"
+      },
+      {
+        "id": "b",
+        "text": "readonly ['a', 'b']"
+      },
+      {
+        "id": "c",
+        "text": "('a' | 'b')[]"
+      },
+      {
+        "id": "d",
+        "text": "any[]"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "classes-and-enums-11",
+    "topic": "classes-and-enums",
+    "lesson": "numeric-enums-and-reverse-mapping",
+    "type": "fill-blank",
+    "prompt": "To derive a union from an as-const object of roles, you write type Role = (typeof Roles)[______ typeof Roles]. (one word)",
+    "explanation": "(typeof Roles)[keyof typeof Roles] indexes the object's type by all its keys, producing the union of its values.",
+    "answer": [
+      "keyof"
+    ]
+  },
+  {
+    "id": "classes-and-enums-12",
+    "topic": "classes-and-enums",
+    "lesson": "numeric-enums-and-reverse-mapping",
+    "type": "single-choice",
+    "prompt": "When is a plain literal union the best choice over an enum?",
+    "explanation": "A literal union is the leanest option when you need only the type: zero runtime code with full type checking.",
+    "options": [
+      {
+        "id": "a",
+        "text": "When you need reverse mapping"
+      },
+      {
+        "id": "b",
+        "text": "When you only need the type and no runtime constants — it emits no code and is fully checked"
+      },
+      {
+        "id": "c",
+        "text": "When you need runtime metadata"
+      },
+      {
+        "id": "d",
+        "text": "Never — enums are always better"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "modules-and-config-01",
+    "topic": "modules-and-config",
+    "lesson": "es-modules-import-export",
+    "type": "single-choice",
+    "prompt": "What makes a file a \"module\" in TypeScript?",
+    "explanation": "A file with top-level import/export is a module. Its top-level declarations are scoped to the file unless exported.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Having more than 100 lines"
+      },
+      {
+        "id": "b",
+        "text": "Using top-level import/export; its top-level names are private unless exported"
+      },
+      {
+        "id": "c",
+        "text": "Ending in .module.ts"
+      },
+      {
+        "id": "d",
+        "text": "Containing a class"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "modules-and-config-02",
+    "topic": "modules-and-config",
+    "lesson": "es-modules-import-export",
+    "type": "single-choice",
+    "prompt": "When should you use `import type`?",
+    "explanation": "import type marks a type-only import, guaranteeing it's erased and preventing a needless (or invalid) runtime import under strict module settings.",
+    "options": [
+      {
+        "id": "a",
+        "text": "For every import"
+      },
+      {
+        "id": "b",
+        "text": "When an imported name is used only as a type — it's always erased and avoids accidental runtime imports"
+      },
+      {
+        "id": "c",
+        "text": "Only for default imports"
+      },
+      {
+        "id": "d",
+        "text": "Never — it's deprecated"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "modules-and-config-03",
+    "topic": "modules-and-config",
+    "lesson": "es-modules-import-export",
+    "type": "single-choice",
+    "prompt": "What is a `.d.ts` declaration file?",
+    "explanation": "A declaration file contains types only (no implementations). The standard library itself is a set of .d.ts files.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A compiled JavaScript file"
+      },
+      {
+        "id": "b",
+        "text": "A types-only file describing the shape of code implemented elsewhere"
+      },
+      {
+        "id": "c",
+        "text": "A configuration file"
+      },
+      {
+        "id": "d",
+        "text": "A test file"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "modules-and-config-04",
+    "topic": "modules-and-config",
+    "lesson": "es-modules-import-export",
+    "type": "fill-blank",
+    "prompt": "Types for a library that ships none usually come from a community package under the ______ scope on DefinitelyTyped. (include the @ symbol)",
+    "explanation": "The @types scope hosts community-maintained type packages that the compiler picks up automatically.",
+    "answer": [
+      "@types",
+      "@types/"
+    ]
+  },
+  {
+    "id": "modules-and-config-05",
+    "topic": "modules-and-config",
+    "lesson": "es-modules-import-export",
+    "type": "single-choice",
+    "prompt": "What does an ambient `declare module 'x' { ... }` do?",
+    "explanation": "An ambient declare module supplies types for an untyped module, so imports from it are type-checked.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Deletes the module"
+      },
+      {
+        "id": "b",
+        "text": "Provides types for a module (often plain JavaScript) that has no type declarations of its own"
+      },
+      {
+        "id": "c",
+        "text": "Runs the module immediately"
+      },
+      {
+        "id": "d",
+        "text": "Renames the module"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "modules-and-config-06",
+    "topic": "modules-and-config",
+    "lesson": "es-modules-import-export",
+    "type": "single-choice",
+    "prompt": "Which `moduleResolution` value is typical for a Vite/webpack app, and which for Node?",
+    "explanation": "Apps built with bundlers use moduleResolution 'bundler'; Node programs use 'node16'/'nodenext' to match Node's resolution rules.",
+    "options": [
+      {
+        "id": "a",
+        "text": "classic for apps; amd for Node"
+      },
+      {
+        "id": "b",
+        "text": "bundler for the app; nodenext for Node.js"
+      },
+      {
+        "id": "c",
+        "text": "node for apps; bundler for Node"
+      },
+      {
+        "id": "d",
+        "text": "They both use classic"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "modules-and-config-07",
+    "topic": "modules-and-config",
+    "lesson": "compiler-target-and-lib",
+    "type": "single-choice",
+    "prompt": "What is the single most impactful check that `strict` turns on?",
+    "explanation": "strictNullChecks prevents null/undefined from silently entering other types, eliminating a huge class of 'cannot read property of undefined' bugs.",
+    "options": [
+      {
+        "id": "a",
+        "text": "skipLibCheck"
+      },
+      {
+        "id": "b",
+        "text": "strictNullChecks — it keeps null/undefined out of other types"
+      },
+      {
+        "id": "c",
+        "text": "noEmit"
+      },
+      {
+        "id": "d",
+        "text": "esModuleInterop"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "modules-and-config-08",
+    "topic": "modules-and-config",
+    "lesson": "compiler-target-and-lib",
+    "type": "single-choice",
+    "prompt": "What does `noEmit` do, and when is it used?",
+    "explanation": "noEmit runs the full type check but writes no .js, so tsc acts purely as a checker alongside a bundler.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It disables type checking"
+      },
+      {
+        "id": "b",
+        "text": "It type-checks without producing JavaScript — used in bundler-based apps where the bundler emits code and tsc only checks"
+      },
+      {
+        "id": "c",
+        "text": "It emits only declaration files"
+      },
+      {
+        "id": "d",
+        "text": "It minifies the output"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "modules-and-config-09",
+    "topic": "modules-and-config",
+    "lesson": "compiler-target-and-lib",
+    "type": "single-choice",
+    "prompt": "What does `isolatedModules` guarantee, and who needs it?",
+    "explanation": "isolatedModules ensures each file is transpilable in isolation, which single-file transpilers (esbuild, SWC, Babel) rely on.",
+    "options": [
+      {
+        "id": "a",
+        "text": "That files never import each other"
+      },
+      {
+        "id": "b",
+        "text": "That every file can be transpiled on its own; bundlers like esbuild/SWC that compile file-by-file require it"
+      },
+      {
+        "id": "c",
+        "text": "That the output is a single file"
+      },
+      {
+        "id": "d",
+        "text": "That modules are lazy-loaded"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "modules-and-config-10",
+    "topic": "modules-and-config",
+    "lesson": "compiler-target-and-lib",
+    "type": "single-choice",
+    "prompt": "Is `noUncheckedIndexedAccess` part of `strict`?",
+    "explanation": "noUncheckedIndexedAccess is opt-in (not in strict). It adds undefined to indexed access results, forcing you to handle out-of-range/missing keys.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes"
+      },
+      {
+        "id": "b",
+        "text": "No — it's a separate, recommended option that makes arr[i]/obj[key] include undefined"
+      },
+      {
+        "id": "c",
+        "text": "It's an alias for strictNullChecks"
+      },
+      {
+        "id": "d",
+        "text": "It's deprecated"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "modules-and-config-11",
+    "topic": "modules-and-config",
+    "lesson": "compiler-target-and-lib",
+    "type": "fill-blank",
+    "prompt": "The compiler option that emits nothing but still type-checks is ______. (the option name)",
+    "explanation": "noEmit type-checks without writing output — the standard way bundler-based apps run tsc in CI.",
+    "answer": [
+      "noEmit"
+    ]
+  },
+  {
+    "id": "modules-and-config-12",
+    "topic": "modules-and-config",
+    "lesson": "compiler-target-and-lib",
+    "type": "single-choice",
+    "prompt": "What are project references for?",
+    "explanation": "Project references (composite + references) organize large multi-project builds, compiling dependencies in order and incrementally.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Linking to external URLs"
+      },
+      {
+        "id": "b",
+        "text": "Building multiple interdependent tsconfig projects in the right order and rebuilding only what changed"
+      },
+      {
+        "id": "c",
+        "text": "Referencing type packages"
+      },
+      {
+        "id": "d",
+        "text": "Importing JSON files"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "utility-and-lookup-types-01",
+    "topic": "utility-and-lookup-types",
+    "lesson": "partial-and-required",
+    "type": "single-choice",
+    "prompt": "What does `Partial<T>` produce?",
+    "explanation": "Partial<T> makes every property optional — ideal for update functions where the caller supplies only the fields to change.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The same type with every property made optional"
+      },
+      {
+        "id": "b",
+        "text": "Only the first property of T"
+      },
+      {
+        "id": "c",
+        "text": "The same type with every property made readonly"
+      },
+      {
+        "id": "d",
+        "text": "A union of T's property types"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "utility-and-lookup-types-02",
+    "topic": "utility-and-lookup-types",
+    "lesson": "partial-and-required",
+    "type": "single-choice",
+    "prompt": "What's the difference between Pick/Omit and Extract/Exclude?",
+    "explanation": "Pick/Omit operate on object properties (by key); Extract/Exclude filter members of a union type.",
+    "options": [
+      {
+        "id": "a",
+        "text": "They are identical"
+      },
+      {
+        "id": "b",
+        "text": "Pick/Omit select or drop object properties; Extract/Exclude keep or remove members of a union"
+      },
+      {
+        "id": "c",
+        "text": "Pick/Omit work on unions; Extract/Exclude work on objects"
+      },
+      {
+        "id": "d",
+        "text": "All four work only on functions"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "utility-and-lookup-types-03",
+    "topic": "utility-and-lookup-types",
+    "lesson": "partial-and-required",
+    "type": "fill-blank",
+    "prompt": "To build an object type with one boolean per key in 'admin' | 'editor', you write ______<'admin' | 'editor', boolean>. (one word)",
+    "explanation": "Record<Keys, Value> builds an object type with the given keys and value type, requiring an entry for each key.",
+    "answer": [
+      "Record"
+    ]
+  },
+  {
+    "id": "utility-and-lookup-types-04",
+    "topic": "utility-and-lookup-types",
+    "lesson": "partial-and-required",
+    "type": "single-choice",
+    "prompt": "Why is it `ReturnType<typeof makeUser>` and not `ReturnType<makeUser>`?",
+    "explanation": "makeUser is a value; ReturnType needs a type. The typeof type query converts the value to its type first.",
+    "options": [
+      {
+        "id": "a",
+        "text": "makeUser is a reserved word"
+      },
+      {
+        "id": "b",
+        "text": "ReturnType needs the function's type; `typeof makeUser` gives that type from the function value"
+      },
+      {
+        "id": "c",
+        "text": "typeof is required by all utility types"
+      },
+      {
+        "id": "d",
+        "text": "They are equivalent"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "utility-and-lookup-types-05",
+    "topic": "utility-and-lookup-types",
+    "lesson": "partial-and-required",
+    "type": "single-choice",
+    "prompt": "What does `Awaited<Promise<string>>` resolve to?",
+    "explanation": "Awaited unwraps the value a promise resolves to (including nested promises), so Awaited<Promise<string>> is string.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Promise<string>"
+      },
+      {
+        "id": "b",
+        "text": "string"
+      },
+      {
+        "id": "c",
+        "text": "unknown"
+      },
+      {
+        "id": "d",
+        "text": "void"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "utility-and-lookup-types-06",
+    "topic": "utility-and-lookup-types",
+    "lesson": "partial-and-required",
+    "type": "multiple-choice",
+    "prompt": "Which statements about utility types are correct? Select all that apply.",
+    "explanation": "Utility types are built in, keep derived types in sync, and avoid duplication. Partial and Readonly apply one level only — they are not deep.",
+    "options": [
+      {
+        "id": "a",
+        "text": "They keep derived types in sync with their source type"
+      },
+      {
+        "id": "b",
+        "text": "Partial and Readonly are deep by default"
+      },
+      {
+        "id": "c",
+        "text": "They are built into the standard library"
+      },
+      {
+        "id": "d",
+        "text": "Deriving avoids duplicating shapes"
+      }
+    ],
+    "answer": [
+      "a",
+      "c",
+      "d"
+    ]
+  },
+  {
+    "id": "utility-and-lookup-types-07",
+    "topic": "utility-and-lookup-types",
+    "lesson": "keyof-type-operator",
+    "type": "single-choice",
+    "prompt": "What does `keyof T` produce?",
+    "explanation": "keyof T is the union of T's property names. For { id: number; name: string } it's 'id' | 'name'.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A union of T's property names (keys)"
+      },
+      {
+        "id": "b",
+        "text": "A union of T's value types"
+      },
+      {
+        "id": "c",
+        "text": "The number of keys in T"
+      },
+      {
+        "id": "d",
+        "text": "The first key of T"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "utility-and-lookup-types-08",
+    "topic": "utility-and-lookup-types",
+    "lesson": "keyof-type-operator",
+    "type": "single-choice",
+    "prompt": "What does `typeof value` mean in a type position (versus in an expression)?",
+    "explanation": "In a type position, typeof is a type query giving the value's static type. In an expression it's the runtime typeof operator returning a string.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The same thing in both places"
+      },
+      {
+        "id": "b",
+        "text": "In a type position it's the static type of the value; in an expression it's a runtime type string like 'string'"
+      },
+      {
+        "id": "c",
+        "text": "It always returns 'object'"
+      },
+      {
+        "id": "d",
+        "text": "It's invalid in a type position"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "utility-and-lookup-types-09",
+    "topic": "utility-and-lookup-types",
+    "lesson": "keyof-type-operator",
+    "type": "single-choice",
+    "prompt": "How do you get the type of the `name` property of `User`?",
+    "explanation": "Indexed access User['name'] looks up the type of the name property.",
+    "options": [
+      {
+        "id": "a",
+        "text": "keyof User.name"
+      },
+      {
+        "id": "b",
+        "text": "An indexed access type: User['name']"
+      },
+      {
+        "id": "c",
+        "text": "typeof User.name"
+      },
+      {
+        "id": "d",
+        "text": "User.name"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "utility-and-lookup-types-10",
+    "topic": "utility-and-lookup-types",
+    "lesson": "keyof-type-operator",
+    "type": "fill-blank",
+    "prompt": "To turn `const roles = ['a','b'] as const` into the union 'a' | 'b', write (typeof roles)[______]. (one word)",
+    "explanation": "(typeof roles)[number] indexes the tuple type by number, yielding the union of its element types.",
+    "answer": [
+      "number"
+    ]
+  },
+  {
+    "id": "utility-and-lookup-types-11",
+    "topic": "utility-and-lookup-types",
+    "lesson": "keyof-type-operator",
+    "type": "single-choice",
+    "prompt": "Why is it `keyof typeof config` rather than `keyof config` for a value `config`?",
+    "explanation": "keyof operates on a type. For a value you first apply typeof to get its type, then keyof to get its keys.",
+    "options": [
+      {
+        "id": "a",
+        "text": "keyof only works on arrays"
+      },
+      {
+        "id": "b",
+        "text": "keyof needs a type; typeof config converts the value to its type first, then keyof takes its keys"
+      },
+      {
+        "id": "c",
+        "text": "They are the same"
+      },
+      {
+        "id": "d",
+        "text": "config must be a class"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "utility-and-lookup-types-12",
+    "topic": "utility-and-lookup-types",
+    "lesson": "keyof-type-operator",
+    "type": "single-choice",
+    "prompt": "What does `User[keyof User]` give you?",
+    "explanation": "Indexing a type by all of its keys (keyof User) yields a union of all the property value types.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A union of all the value types in User"
+      },
+      {
+        "id": "b",
+        "text": "A union of User's keys"
+      },
+      {
+        "id": "c",
+        "text": "The first value of User"
+      },
+      {
+        "id": "d",
+        "text": "never"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "type-transformations-01",
+    "topic": "type-transformations",
+    "lesson": "conditional-type-basics",
+    "type": "single-choice",
+    "prompt": "How do you read `T extends U ? X : Y`?",
+    "explanation": "A conditional type is a type-level ternary: if T is assignable to U the result is X, otherwise Y.",
+    "options": [
+      {
+        "id": "a",
+        "text": "T always becomes X"
+      },
+      {
+        "id": "b",
+        "text": "If T is assignable to U, the type is X; otherwise it's Y — a type-level ternary"
+      },
+      {
+        "id": "c",
+        "text": "T inherits from U"
+      },
+      {
+        "id": "d",
+        "text": "U extends T, giving X"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "type-transformations-02",
+    "topic": "type-transformations",
+    "lesson": "conditional-type-basics",
+    "type": "single-choice",
+    "prompt": "What does it mean that conditional types distribute over unions?",
+    "explanation": "When the checked type is a naked type parameter, the conditional applies to each member of a union and unions the results.",
+    "options": [
+      {
+        "id": "a",
+        "text": "They ignore unions"
+      },
+      {
+        "id": "b",
+        "text": "A naked `T extends ...` is applied to each union member separately, and the results are unioned together"
+      },
+      {
+        "id": "c",
+        "text": "They convert unions to intersections"
+      },
+      {
+        "id": "d",
+        "text": "They only work on the first member"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "type-transformations-03",
+    "topic": "type-transformations",
+    "lesson": "conditional-type-basics",
+    "type": "fill-blank",
+    "prompt": "Inside an `extends` clause, the ______ keyword captures part of the matched type, e.g. T extends (infer U)[] ? U : T. (one word)",
+    "explanation": "infer declares a type variable inside the extends clause to capture part of the matched type for use in the true branch.",
+    "answer": [
+      "infer"
+    ]
+  },
+  {
+    "id": "type-transformations-04",
+    "topic": "type-transformations",
+    "lesson": "conditional-type-basics",
+    "type": "single-choice",
+    "prompt": "How do you extract a function's return type with a conditional?",
+    "explanation": "Matching the function shape and inferring R after => extracts the return type — essentially how the built-in ReturnType works.",
+    "options": [
+      {
+        "id": "a",
+        "text": "F extends (...args: any[]) => infer R ? R : never"
+      },
+      {
+        "id": "b",
+        "text": "F extends R ? R : never"
+      },
+      {
+        "id": "c",
+        "text": "keyof F"
+      },
+      {
+        "id": "d",
+        "text": "F['return']"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "type-transformations-05",
+    "topic": "type-transformations",
+    "lesson": "conditional-type-basics",
+    "type": "single-choice",
+    "prompt": "How do you stop a conditional type from distributing over a union?",
+    "explanation": "Wrapping in [T]/[U] prevents distribution, testing the whole type at once — the standard trick for detecting never, for instance.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use readonly"
+      },
+      {
+        "id": "b",
+        "text": "Wrap both sides in a one-element tuple: [T] extends [U] ? ... : ..."
+      },
+      {
+        "id": "c",
+        "text": "Use keyof"
+      },
+      {
+        "id": "d",
+        "text": "You cannot stop distribution"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "type-transformations-06",
+    "topic": "type-transformations",
+    "lesson": "conditional-type-basics",
+    "type": "single-choice",
+    "prompt": "In a distributive conditional, what happens to members that resolve to `never`?",
+    "explanation": "never members disappear from a union, so a conditional that maps unwanted members to never effectively filters them out.",
+    "options": [
+      {
+        "id": "a",
+        "text": "They become undefined"
+      },
+      {
+        "id": "b",
+        "text": "They drop out of the resulting union — which is how filtering (e.g. Exclude) works"
+      },
+      {
+        "id": "c",
+        "text": "They cause a compile error"
+      },
+      {
+        "id": "d",
+        "text": "They become any"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "type-transformations-07",
+    "topic": "type-transformations",
+    "lesson": "mapped-type-syntax",
+    "type": "single-choice",
+    "prompt": "What does `{ [K in keyof T]: T[K] }` do?",
+    "explanation": "The mapping clause [K in keyof T] iterates each key, and T[K] is that key's value type — the foundation of a mapped type.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Deletes T's properties"
+      },
+      {
+        "id": "b",
+        "text": "Iterates over every key of T and copies each property — the basis of a mapped type"
+      },
+      {
+        "id": "c",
+        "text": "Returns the keys of T as a union"
+      },
+      {
+        "id": "d",
+        "text": "Makes T a tuple"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "type-transformations-08",
+    "topic": "type-transformations",
+    "lesson": "mapped-type-syntax",
+    "type": "single-choice",
+    "prompt": "How do you make every property of T optional with a mapped type?",
+    "explanation": "Adding the ? modifier to each mapped property makes them optional — exactly how Partial<T> is defined.",
+    "options": [
+      {
+        "id": "a",
+        "text": "{ [K in keyof T]?: T[K] }"
+      },
+      {
+        "id": "b",
+        "text": "{ readonly [K in keyof T]: T[K] }"
+      },
+      {
+        "id": "c",
+        "text": "{ [K in keyof T]-?: T[K] }"
+      },
+      {
+        "id": "d",
+        "text": "{ [K in keyof T]: never }"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "type-transformations-09",
+    "topic": "type-transformations",
+    "lesson": "mapped-type-syntax",
+    "type": "single-choice",
+    "prompt": "What do the `-readonly` and `-?` modifiers do?",
+    "explanation": "The - prefix strips modifiers: -readonly removes readonly, -? removes optional — the basis of Required and mutable helpers.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Add readonly and optional"
+      },
+      {
+        "id": "b",
+        "text": "Remove the readonly and optional modifiers respectively"
+      },
+      {
+        "id": "c",
+        "text": "Nothing"
+      },
+      {
+        "id": "d",
+        "text": "Convert properties to methods"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "type-transformations-10",
+    "topic": "type-transformations",
+    "lesson": "mapped-type-syntax",
+    "type": "fill-blank",
+    "prompt": "A mapped type drops a key by remapping it to ______ in the `as` clause. (one word)",
+    "explanation": "Remapping a key to never in the as clause removes it, letting a mapped type filter properties.",
+    "answer": [
+      "never"
+    ]
+  },
+  {
+    "id": "type-transformations-11",
+    "topic": "type-transformations",
+    "lesson": "mapped-type-syntax",
+    "type": "single-choice",
+    "prompt": "What does the `as` clause in a mapped type let you do?",
+    "explanation": "In a mapped type, the as clause renames keys (e.g. `on${Capitalize<K>}`) or filters them by mapping to never.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Assert a value's type"
+      },
+      {
+        "id": "b",
+        "text": "Remap keys — rename them (often with template literal types) or filter them out by mapping to never"
+      },
+      {
+        "id": "c",
+        "text": "Import a module"
+      },
+      {
+        "id": "d",
+        "text": "Declare a variable"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "type-transformations-12",
+    "topic": "type-transformations",
+    "lesson": "mapped-type-syntax",
+    "type": "single-choice",
+    "prompt": "Are the built-in utility types like `Readonly` and `Pick` special compiler magic?",
+    "explanation": "Readonly, Partial, Pick, and Record are plain mapped types (with indexed access and, for Pick, a key constraint) — nothing magic.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes — they can't be reproduced"
+      },
+      {
+        "id": "b",
+        "text": "No — they're ordinary mapped types you could define yourself"
+      },
+      {
+        "id": "c",
+        "text": "They are runtime functions"
+      },
+      {
+        "id": "d",
+        "text": "They only work in strict mode"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "type-transformations-13",
+    "topic": "type-transformations",
+    "lesson": "template-literal-type-basics",
+    "type": "single-choice",
+    "prompt": "What does the type `` `Hello, ${string}` `` describe?",
+    "explanation": "A template literal type matches strings following the pattern — here, anything starting with 'Hello, '.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only the literal string 'Hello, '"
+      },
+      {
+        "id": "b",
+        "text": "Every string that begins with 'Hello, ' followed by any string"
+      },
+      {
+        "id": "c",
+        "text": "Any string at all"
+      },
+      {
+        "id": "d",
+        "text": "A function returning a string"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "type-transformations-14",
+    "topic": "type-transformations",
+    "lesson": "template-literal-type-basics",
+    "type": "single-choice",
+    "prompt": "What does `` `${'a' | 'b'}-${'x' | 'y'}` `` evaluate to?",
+    "explanation": "Unions in a template expand to every combination — the cross product of the two unions.",
+    "options": [
+      {
+        "id": "a",
+        "text": "'a-x'"
+      },
+      {
+        "id": "b",
+        "text": "'a-x' | 'a-y' | 'b-x' | 'b-y' (the cross product)"
+      },
+      {
+        "id": "c",
+        "text": "'a' | 'b' | 'x' | 'y'"
+      },
+      {
+        "id": "d",
+        "text": "string"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "type-transformations-15",
+    "topic": "type-transformations",
+    "lesson": "template-literal-type-basics",
+    "type": "multiple-choice",
+    "prompt": "Which are the intrinsic string-manipulation types? Select all that apply.",
+    "explanation": "The intrinsics are Uppercase, Lowercase, Capitalize, and Uncapitalize. There is no built-in Reverse.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Uppercase"
+      },
+      {
+        "id": "b",
+        "text": "Lowercase"
+      },
+      {
+        "id": "c",
+        "text": "Capitalize"
+      },
+      {
+        "id": "d",
+        "text": "Reverse"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "type-transformations-16",
+    "topic": "type-transformations",
+    "lesson": "template-literal-type-basics",
+    "type": "single-choice",
+    "prompt": "How do template literal types help mapped types?",
+    "explanation": "Template literal types build new key names in a mapped type's as clause, e.g. turning click into onClick.",
+    "options": [
+      {
+        "id": "a",
+        "text": "They don't"
+      },
+      {
+        "id": "b",
+        "text": "In key remapping (as), they generate new key names like `on${Capitalize<K>}`"
+      },
+      {
+        "id": "c",
+        "text": "They make keys readonly"
+      },
+      {
+        "id": "d",
+        "text": "They convert keys to numbers"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "type-transformations-17",
+    "topic": "type-transformations",
+    "lesson": "template-literal-type-basics",
+    "type": "fill-blank",
+    "prompt": "To extract the part of a string type before a dot, use template ______ in a conditional: S extends `${infer P}.${string}` ? P : never. (one word)",
+    "explanation": "Template literal patterns can use infer to capture substrings, enabling type-level parsing of structured strings.",
+    "answer": [
+      "infer"
+    ]
+  },
+  {
+    "id": "type-transformations-18",
+    "topic": "type-transformations",
+    "lesson": "template-literal-type-basics",
+    "type": "single-choice",
+    "prompt": "Do intrinsic string types like `Uppercase<T>` work on runtime string values?",
+    "explanation": "The intrinsics transform string types at compile time. To uppercase a value at runtime, use String.prototype.toUpperCase.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes, they transform values"
+      },
+      {
+        "id": "b",
+        "text": "No — they operate on string types only; use String.prototype methods for runtime values"
+      },
+      {
+        "id": "c",
+        "text": "Only in Node.js"
+      },
+      {
+        "id": "d",
+        "text": "Only with as const"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-patterns-01",
+    "topic": "advanced-patterns",
+    "lesson": "interface-declaration-merging",
+    "type": "single-choice",
+    "prompt": "What happens if you declare two interfaces with the same name?",
+    "explanation": "Interface declaration merging combines same-named interfaces into one type with all members — the basis of module augmentation.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A duplicate-identifier error"
+      },
+      {
+        "id": "b",
+        "text": "TypeScript merges them into a single interface containing all their members"
+      },
+      {
+        "id": "c",
+        "text": "The second one replaces the first"
+      },
+      {
+        "id": "d",
+        "text": "Only the first is used"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-patterns-02",
+    "topic": "advanced-patterns",
+    "lesson": "interface-declaration-merging",
+    "type": "single-choice",
+    "prompt": "Can `type` aliases be merged like interfaces?",
+    "explanation": "Type aliases don't merge; declaring the same alias twice is an error. Merging works on interfaces and namespaces.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes, identically"
+      },
+      {
+        "id": "b",
+        "text": "No — a duplicate `type` name is an error; only interfaces (and namespaces) merge"
+      },
+      {
+        "id": "c",
+        "text": "Only string aliases merge"
+      },
+      {
+        "id": "d",
+        "text": "Only in strict mode"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-patterns-03",
+    "topic": "advanced-patterns",
+    "lesson": "interface-declaration-merging",
+    "type": "single-choice",
+    "prompt": "How do you add a typed property to a third-party module's interface?",
+    "explanation": "Module augmentation reopens a library's interface via declare module and merges your members into it — no source edits or casts.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Edit the library's source"
+      },
+      {
+        "id": "b",
+        "text": "Module augmentation: declare module 'lib' { interface X { ... } } in a file that's a module"
+      },
+      {
+        "id": "c",
+        "text": "Cast to any everywhere"
+      },
+      {
+        "id": "d",
+        "text": "It's impossible"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-patterns-04",
+    "topic": "advanced-patterns",
+    "lesson": "interface-declaration-merging",
+    "type": "single-choice",
+    "prompt": "How do you add a typed property to `window`?",
+    "explanation": "declare global inside a module merges new members into the global Window interface — the typed alternative to casting.",
+    "options": [
+      {
+        "id": "a",
+        "text": "(window as any).x = ..."
+      },
+      {
+        "id": "b",
+        "text": "Inside a module, declare global { interface Window { ... } }"
+      },
+      {
+        "id": "c",
+        "text": "Edit lib.dom.d.ts"
+      },
+      {
+        "id": "d",
+        "text": "You can't type globals"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-patterns-05",
+    "topic": "advanced-patterns",
+    "lesson": "interface-declaration-merging",
+    "type": "fill-blank",
+    "prompt": "An augmentation file that isn't already a module needs a top-level `______ {}` to make it one. (one keyword)",
+    "explanation": "Adding `export {}` turns a file into a module, which is required for declare global and scoped module augmentation.",
+    "answer": [
+      "export"
+    ]
+  },
+  {
+    "id": "advanced-patterns-06",
+    "topic": "advanced-patterns",
+    "lesson": "interface-declaration-merging",
+    "type": "single-choice",
+    "prompt": "Where do namespaces still make sense?",
+    "explanation": "ES modules replaced namespaces for app code. Namespaces remain useful for value merging and ambient global (script-loaded) library typings.",
+    "options": [
+      {
+        "id": "a",
+        "text": "For organizing all application code instead of modules"
+      },
+      {
+        "id": "b",
+        "text": "For merging extra members onto a function/class/enum value, and in ambient .d.ts files describing global libraries"
+      },
+      {
+        "id": "c",
+        "text": "They are fully removed from TypeScript"
+      },
+      {
+        "id": "d",
+        "text": "Only for React components"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-patterns-07",
+    "topic": "advanced-patterns",
+    "lesson": "standard-decorators-overview",
+    "type": "single-choice",
+    "prompt": "What is the standard decorator function signature in TypeScript 5.0+?",
+    "explanation": "Standard ECMAScript decorators receive (value, context). The (target, key, descriptor) shape belongs to the older legacy decorators.",
+    "options": [
+      {
+        "id": "a",
+        "text": "(target, propertyKey, descriptor)"
+      },
+      {
+        "id": "b",
+        "text": "(value, context) — the decorated value plus a context object describing it"
+      },
+      {
+        "id": "c",
+        "text": "(context) only"
+      },
+      {
+        "id": "d",
+        "text": "() => void"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-patterns-08",
+    "topic": "advanced-patterns",
+    "lesson": "standard-decorators-overview",
+    "type": "single-choice",
+    "prompt": "Do standard decorators require a compiler flag?",
+    "explanation": "Standard decorators need no flag in TS 5.0+. The older legacy decorators require the experimentalDecorators option.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes — always experimentalDecorators"
+      },
+      {
+        "id": "b",
+        "text": "No — standard decorators work out of the box in TypeScript 5.0+; the legacy ones require experimentalDecorators"
+      },
+      {
+        "id": "c",
+        "text": "Yes — emitDecoratorMetadata"
+      },
+      {
+        "id": "d",
+        "text": "Only in Node.js"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-patterns-09",
+    "topic": "advanced-patterns",
+    "lesson": "standard-decorators-overview",
+    "type": "multiple-choice",
+    "prompt": "Which can standard decorators decorate? Select all that apply.",
+    "explanation": "Standard decorators apply to classes, methods, getters/setters, fields, and auto-accessors — but not parameters, which are legacy-only.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Classes"
+      },
+      {
+        "id": "b",
+        "text": "Methods"
+      },
+      {
+        "id": "c",
+        "text": "Fields and accessors"
+      },
+      {
+        "id": "d",
+        "text": "Function parameters"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "advanced-patterns-10",
+    "topic": "advanced-patterns",
+    "lesson": "standard-decorators-overview",
+    "type": "single-choice",
+    "prompt": "What does `context.addInitializer` do?",
+    "explanation": "addInitializer schedules setup code to run at initialization time, e.g. to bind a method to this per instance.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Deletes the member"
+      },
+      {
+        "id": "b",
+        "text": "Registers a function to run during instance (or class) initialization — useful for binding methods or registering instances"
+      },
+      {
+        "id": "c",
+        "text": "Runs the decorator twice"
+      },
+      {
+        "id": "d",
+        "text": "Emits metadata"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-patterns-11",
+    "topic": "advanced-patterns",
+    "lesson": "standard-decorators-overview",
+    "type": "fill-blank",
+    "prompt": "Legacy decorators require the ______ compiler option. (the option name)",
+    "explanation": "The legacy decorator implementation is enabled with experimentalDecorators and uses the older signature.",
+    "answer": [
+      "experimentalDecorators"
+    ]
+  },
+  {
+    "id": "advanced-patterns-12",
+    "topic": "advanced-patterns",
+    "lesson": "standard-decorators-overview",
+    "type": "single-choice",
+    "prompt": "If a method decorator should change behavior, what must it do?",
+    "explanation": "A method/class decorator that transforms behavior returns the new function/class. Returning void leaves the original in place.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Mutate the prototype directly only"
+      },
+      {
+        "id": "b",
+        "text": "Return a replacement function; returning nothing leaves the original method unchanged"
+      },
+      {
+        "id": "c",
+        "text": "Throw an error"
+      },
+      {
+        "id": "d",
+        "text": "Call the method immediately"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-patterns-13",
+    "topic": "advanced-patterns",
+    "lesson": "typing-promises-and-async-await",
+    "type": "single-choice",
+    "prompt": "What type does an `async` function that returns a `number` have?",
+    "explanation": "An async function wraps its return in a promise, so returning a number gives the type Promise<number>.",
+    "options": [
+      {
+        "id": "a",
+        "text": "number"
+      },
+      {
+        "id": "b",
+        "text": "Promise<number> — async functions always return a promise"
+      },
+      {
+        "id": "c",
+        "text": "Awaited<number>"
+      },
+      {
+        "id": "d",
+        "text": "void"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-patterns-14",
+    "topic": "advanced-patterns",
+    "lesson": "typing-promises-and-async-await",
+    "type": "single-choice",
+    "prompt": "What type does `response.json()` resolve to, and how should you handle it?",
+    "explanation": "json() resolves to any, which disables checking. Treat network data as unknown and validate its shape at runtime before trusting it.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The exact shape you expect; use it directly"
+      },
+      {
+        "id": "b",
+        "text": "any — treat the result as unknown and validate it with a type guard before using it"
+      },
+      {
+        "id": "c",
+        "text": "string — parse it yourself"
+      },
+      {
+        "id": "d",
+        "text": "never"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-patterns-15",
+    "topic": "advanced-patterns",
+    "lesson": "typing-promises-and-async-await",
+    "type": "single-choice",
+    "prompt": "Under `strict`, what is the type of the value in a `catch` clause?",
+    "explanation": "With useUnknownInCatchVariables (part of strict), the caught value is unknown, since anything can be thrown. Narrow with instanceof Error first.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Error"
+      },
+      {
+        "id": "b",
+        "text": "unknown — because JavaScript can throw any value; narrow it before use"
+      },
+      {
+        "id": "c",
+        "text": "any"
+      },
+      {
+        "id": "d",
+        "text": "string"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-patterns-16",
+    "topic": "advanced-patterns",
+    "lesson": "typing-promises-and-async-await",
+    "type": "multiple-choice",
+    "prompt": "Which options help you include and type-check JavaScript during migration? Select all that apply.",
+    "explanation": "allowJs includes .js files, checkJs / @ts-check type-checks them, and JSDoc adds types before renaming. noEmit is unrelated to migration.",
+    "options": [
+      {
+        "id": "a",
+        "text": "allowJs"
+      },
+      {
+        "id": "b",
+        "text": "checkJs (or // @ts-check per file)"
+      },
+      {
+        "id": "c",
+        "text": "JSDoc type annotations"
+      },
+      {
+        "id": "d",
+        "text": "noEmit"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "advanced-patterns-17",
+    "topic": "advanced-patterns",
+    "lesson": "typing-promises-and-async-await",
+    "type": "fill-blank",
+    "prompt": "You can add a comment ______ at the top of a .js file to type-check it without renaming. (the exact comment, e.g. // @xxx)",
+    "explanation": "// @ts-check enables type checking for a single JavaScript file using inference and JSDoc — a low-friction migration step.",
+    "answer": [
+      "// @ts-check",
+      "@ts-check",
+      "ts-check"
+    ]
+  },
+  {
+    "id": "advanced-patterns-18",
+    "topic": "advanced-patterns",
+    "lesson": "typing-promises-and-async-await",
+    "type": "ordering",
+    "prompt": "Order these steps for gradually migrating a JavaScript codebase to TypeScript.",
+    "explanation": "Introduce TypeScript with allowJs, check JavaScript in place, rename file by file, then tighten strictness — all while the code keeps running.",
+    "answer": [
+      "allowjs",
+      "checkjs",
+      "rename",
+      "strict"
+    ],
+    "items": [
+      {
+        "id": "allowjs",
+        "text": "Add TypeScript and set allowJs so .js and .ts coexist"
+      },
+      {
+        "id": "checkjs",
+        "text": "Turn on checkJs / // @ts-check and add JSDoc types"
+      },
+      {
+        "id": "rename",
+        "text": "Rename files from .js to .ts one at a time"
+      },
+      {
+        "id": "strict",
+        "text": "Tighten the config by enabling strict options incrementally"
+      }
+    ]
+  }
+]
